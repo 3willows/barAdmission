@@ -15,7 +15,7 @@ export default function Header() {
         <p>HONG KONG SPECIAL ADMINISTRATIVE REGION</p>
         <p>COURT OF FIRST INSTANCE</p>
         <p>
-          ACTION NO. <Tab /> OF {year}
+        MISCELLANEOUS PROCEEDINGS NO. <Tab /> OF {year}
         </p>
       </div>
       <div>

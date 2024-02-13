@@ -1,3 +1,3 @@
 export function Tab() {
-  return <span>&emsp;</span>
+  return <span>&emsp;&emsp;</span>
 }

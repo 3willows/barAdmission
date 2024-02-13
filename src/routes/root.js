@@ -2,77 +2,83 @@ import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import "../App.css"
 import { useAppContext } from "../Context.js"
+import { DataInput } from "../components/DataInput"
 
 export default function Root() {
   const [isOpen, setIsOpen] = useState(false)
-  const { applicant, solicitors, year, mover, dispatch } = useAppContext()
+  const { applicant } = useAppContext()
   const toggleFan = () => {
     setIsOpen(!isOpen)
   }
-
   return (
     <div className="App">
-      <h1>Court Papers for Barrister Admission</h1>
+      <h1>Court Papers for Hong Kong Barrister Admission</h1>
       <button onClick={toggleFan}>
-        {isOpen ? "Close notes" : "Open notes"}
+        {isOpen
+          ? "Just a quick primer: remember to do your own homework!"
+          : "NOTES"}
       </button>
-
-      {isOpen && (
-        <div>
-          <p>
-            Not an exhaustive list: research and take care of other necessary
-            pre-requisites yourself!{" "}
-          </p>
-        </div>
-      )}
-
+      <div className="">
+        <h3>The Applicant</h3>
+      </div>
       <p className="">
-        Name of Applicant:{" "}
-        <input
-          type="text"
-          value={applicant}
-          onChange={(e) =>
-            dispatch({ type: "applicant", payload: e.target.value })
-          }
-        ></input>
+        Applicant Name <DataInput prop="applicant" />
       </p>
       <p className="">
-        Name of Solicitors for the Applicant:
-        <input
-          type="text"
-          value={solicitors}
-          onChange={(e) =>
-            dispatch({ type: "solicitors", payload: e.target.value })
-          }
-        ></input>
+        Applicant Address <DataInput prop="applicantAddress" />
+      </p>
+      <div className="">
+        <h3>The Solicitors</h3>
+        <p className="">
+          Name of Solicitors for the Applicant: <DataInput prop="solicitors" />
+        </p>
+        <p className="">
+          Solicitors' Address: <DataInput prop="solicitorsAddress" />
+        </p>
+        <p className="">
+          Solicitors' phone no: <DataInput prop="solicitorsPhone" />
+        </p>
+        <p className="">
+          Solicitors' fax no. <DataInput prop="solicitorsFax" />
+        </p>
+      </div>
+      <div>
+        <h3>Information for the application</h3>
+        <p className="">
+          Date of Certificate of Qualification for Admission
+          <DataInput prop="certdate" />
+        </p>
+        <p className="">
+          Year of Application:
+          <DataInput prop="year" />
+        </p>
+        <p className="">
+          Name of the Mover for the Applicant:
+          <DataInput prop="mover" />
+        </p>
+      </div>
+      <p className="">
+        <Link to={`applicant`} target="_ref">
+          {" "}
+          Affidavit of {applicant}
+        </Link>
+      </p>{" "}
+      <p className="">
+        <Link to={`id`} target="__ref">
+          {" "}
+          Affidavit of Identity
+        </Link>
       </p>
       <p className="">
-        Year of Application:
-        <input
-          type="text"
-          value={year}
-          onChange={(e) => dispatch({ type: "year", payload: e.target.value })}
-        ></input>
+        <Link to={`letters`} target="___ref">
+          {" "}
+          Letters to 3 regulators
+        </Link>
       </p>
       <p className="">
-        [Optional] Name of the Mover for the Applicant:
-        <input
-          type="text"
-          value={mover}
-          onChange={(e) => dispatch({ type: "mover", payload: e.target.value })}
-        ></input>
-      </p>
-      <p className="">
-        <Link to={`noticeofmotion`}> Notice of Motion</Link>
-      </p>
-      <p className="">
-        <button>Affirmation of Identity</button>
-      </p>
-      <p className="">
-        <button>Affirmation of {applicant}</button>{" "}
-      </p>
-      <p className="">
-        <button>Letters to 3 regulators</button>
+        <Link to={`notice`} target="_____ref">
+          Notice of Motion
+        </Link>
       </p>
     </div>
   )

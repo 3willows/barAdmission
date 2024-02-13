@@ -1,65 +1,55 @@
 import { useAppContext } from "../Context.js"
+import Header from "../components/Header.js"
 
-export default function AffidavitOfIdentity() {
-  const { applicant, solicitors, year } = useAppContext()
+export default function AffidavitOfApplicant() {
+  const { applicant, certdate } = useAppContext()
+
+  const abbrev = applicant
+    .split(" ")
+    .map((word) => word[0])
+    .join("")
+
   return (
     <>
-      <div class="top-right">
-        <p>
-          HCA <Tab />/{year}
-        </p>
-      </div>
-
-      <div>
-        <p>IN THE HIGH COURT OF THE</p>
-        <p>HONG KONG SPECIAL ADMINISTRATIVE REGION</p>
-        <p>COURT OF FIRST INSTANCE</p>
-        <p>
-          ACTION NO. <Tab /> OF {year}
-        </p>
-      </div>
-      <div>
-        <p className="">
-          IN THE MATTER of the Application of {applicant} for admission as a
-          Barrister of the High Court of the Hong Kong Special Administrative
-          Region
-        </p>
-        <p className="">and</p>
-        <p className="">
-          IN THE MATTER of Section 27 of the Legal Practitioners Ordinance, Cap.
-          159
-        </p>
-      </div>
-      <div className="">NOTICE OF MOTION</div>
-      <div className="">
-        <p
-          className="
-        "
-        >
-          TAKE NOTICE that the High Court of the Hong Kong Special
-          Administrative Region will be moved before the Honourable <Tab /> on{" "}
-          <Tab />, <Tab />
-          <Tab />, <Tab /> at <Tab /> or so soon thereafter as Counsel can be
-          heard on behalf of {applicant} the above-named Applicant for an Order
-          that the said {applicant} be admitted and enrolled as a Barrister of
-          the High Court of the Hong Kong Special Administrative Region.
-        </p>
-      </div>
-      <div className="">
-        <p className="">
-          {" "}
-          Dated this <Tab /> day of <Tab /> {year}
-        </p>
-        <p className="">Registrar</p>
-      </div>
-      <div className="">
-        This Notice of Motion was issued by {solicitors}, [Solicitors' Address]
-        Solicitors for the Applicant.
-      </div>
+      <Header />
+      <p className="">
+        AFFIDAVIT OF
+        {applicant}
+      </p>
+      <p className="">
+        I, {applicant} of [address], MAKE OATH and say as follows:-
+      </p>
+      <ol>
+        <li>
+          I am the Applicant in these proceedings. I make this Affidavit in
+          support of my application to be admitted as a barrister under Section
+          27 of the Legal Practitioners Ordinance, Cap. 159.
+        </li>
+        <li>
+          I am not in practice as a solicitor either on my own account or as a
+          partner or salaried employee in a firm of solicitors practising in
+          Hong Kong.
+        </li>
+        <li>I have obtained a Postgraduate Certificate in Laws.</li>
+        <li>
+          I have completed at least 6 months of the period of approved pupillage
+          specified in Section 10 of the Barristers (Qualification for Admission
+          and Pupillage) Rules Cap. 159 sub. Leg AC. There is now produced and
+          shown to me marked {abbrev}-1, a certified true copy of the
+          Certificate of Qualification for Admission dated {certdate} issued to
+          me by the Hong Kong Bar Association.{" "}
+        </li>
+        <li>
+          I have been ordinarily resident in Hong Kong for at least 7 years.
+        </li>
+        <li>
+          I verily believe that I have satisfied the requirements of Section 27
+          of the Legal Practitioners Ordinance, Cap. 159 and humbly pray that
+          this Honourable Court will admit me as a barrister of the Honourable
+          Court.{" "}
+        </li>
+      </ol>
+      <p className="">This Affidavit is filed on behalf of the Applicant.</p>
     </>
   )
-}
-
-function Tab() {
-  return <span>&emsp;</span>
 }
