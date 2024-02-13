@@ -3,9 +3,12 @@ import React, { createContext, useReducer, useContext } from "react"
 const initialState = {
   applicant: "APPLICANT",
   applicantAddress: "APPLICANT ADDRESS",
+  applicantAffidavit: false,
   solicitors: "SOLICITORS",
   solicitorsPhone: "SOLICITORS PHONE",
-  solicitorsFax : "SOLICITORS FAX",
+  solicitorsFax: "SOLICITORS FAX",
+  idDeponent: "ID DEPONENT",
+  idAffidavit: false,
   year: new Date().getFullYear(),
   mover: "[Pupil Master]",
   certdate: "[certdate]",
@@ -19,8 +22,18 @@ const reducer = (state, action) => {
       return { ...state, applicant: action.payload }
     case "applicantAddress":
       return { ...state, applicantAddress: action.payload }
+    case "applicantAffidavit":
+      return { ...state, applicantAffidavit: action.payload }
     case "solicitors":
       return { ...state, solicitors: action.payload }
+    case "solicitorsPhone":
+      return { ...state, solicitorsPhone: action.payload }
+    case "solicitorsFax":
+      return { ...state, solicitorsFax: action.payload }
+    case "idDeponent":
+      return { ...state, idDeponent: action.payload }
+    case "idAffidavit":
+      return { ...state, idAffidavit: action.payload }
     case "year":
       return { ...state, year: action.payload }
     case "mover":
@@ -34,12 +47,39 @@ const reducer = (state, action) => {
 
 // Context provider
 const ContextProvider = ({ children }) => {
-  const [{ applicant, solicitors, year, mover, certdate }, dispatch] =
-    useReducer(reducer, initialState)
+  const [
+    {
+      applicant,
+      applicantAddress,
+      applicantAffidavit,
+      solicitors,
+      solicitorsPhone,
+      solicitorsFax,
+      idAffidavit,
+      idDeponent,
+      year,
+      mover,
+      certdate,
+    },
+    dispatch,
+  ] = useReducer(reducer, initialState)
 
   return (
     <Context.Provider
-      value={{ applicant, solicitors, year, mover, certdate, dispatch }}
+      value={{
+        applicant,
+        applicantAddress,
+        applicantAffidavit,
+        solicitors,
+        solicitorsPhone,
+        solicitorsFax,
+        idAffidavit,
+        idDeponent,
+        year,
+        mover,
+        certdate,
+        dispatch
+      }}
     >
       {children}
     </Context.Provider>

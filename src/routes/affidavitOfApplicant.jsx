@@ -1,8 +1,8 @@
 import { useAppContext } from "../Context.js"
-import Header from "../components/Header.js"
+import Heading from "../components/AffirmationHeading.js"
 
 export default function AffidavitOfApplicant() {
-  const { applicant, certdate } = useAppContext()
+  const { applicant, applicantAddress, certdate } = useAppContext()
 
   const abbrev = applicant
     .split(" ")
@@ -11,13 +11,10 @@ export default function AffidavitOfApplicant() {
 
   return (
     <>
-      <Header />
+      <Heading />
+      <p className="">AFFIDAVIT OF {applicant}</p>
       <p className="">
-        AFFIDAVIT OF
-        {applicant}
-      </p>
-      <p className="">
-        I, {applicant} of [address], MAKE OATH and say as follows:-
+        I, {applicant} of {applicantAddress}, MAKE OATH and say as follows:-
       </p>
       <ol>
         <li>

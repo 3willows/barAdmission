@@ -1,8 +1,8 @@
 import { useAppContext } from "../Context.js"
 import { Tab } from "./Tab.js"
 
-export default function Header() {
-  const { applicant, solicitors, year } = useAppContext()
+export default function Heading() {
+  const { applicant, year } = useAppContext()
   return (
     <>
       <div class="top-right">

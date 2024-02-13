@@ -6,13 +6,23 @@ import { DataInput } from "../components/DataInput"
 
 export default function Root() {
   const [isOpen, setIsOpen] = useState(false)
-  const { applicant } = useAppContext()
+  const { applicant, applicantAffidavit, idAffidavit, dispatch } =
+    useAppContext()
   const toggleFan = () => {
     setIsOpen(!isOpen)
   }
+
+  function handleAffidavit(relevantAffidavit, e) {
+    if (e.target.checked) {
+      dispatch({ type: relevantAffidavit, payload: true })
+    } else {
+      dispatch({ type: relevantAffidavit, payload: false })
+    }
+  }
+
   return (
     <div className="App">
-      <h1>Court Papers for Hong Kong Barrister Admission</h1>
+      <h1>Barrister Admissions Bundle</h1>
       <button onClick={toggleFan}>
         {isOpen
           ? "Just a quick primer: remember to do your own homework!"
@@ -27,6 +37,13 @@ export default function Root() {
       <p className="">
         Applicant Address <DataInput prop="applicantAddress" />
       </p>
+      <p className="">
+        Affidavit?
+        <input
+          type="checkbox"
+          onChange={(e) => handleAffidavit("applicantAffidavit", e)}
+        ></input>
+      </p>
       <div className="">
         <h3>The Solicitors</h3>
         <p className="">
@@ -40,6 +57,20 @@ export default function Root() {
         </p>
         <p className="">
           Solicitors' fax no. <DataInput prop="solicitorsFax" />
+        </p>
+       
+      </div>
+      <div className="">
+        <h3>Deponent on Identity</h3> 
+        <p className="">
+          Name of Deponent <DataInput prop="idDeponent" />
+        </p>
+        <p className="">
+          Affidavit?
+          <input
+            type="checkbox"
+            onChange={(e) => handleAffidavit("idAffidavit", e)}
+          ></input>
         </p>
       </div>
       <div>
@@ -60,13 +91,13 @@ export default function Root() {
       <p className="">
         <Link to={`applicant`} target="_ref">
           {" "}
-          Affidavit of {applicant}
+          {applicantAffidavit ? "Affidavit" : "Affirmation"} of {applicant}
         </Link>
       </p>{" "}
       <p className="">
         <Link to={`id`} target="__ref">
           {" "}
-          Affidavit of Identity
+          {idAffidavit ? "Affidavit" : "Affirmation"} of Identity
         </Link>
       </p>
       <p className="">

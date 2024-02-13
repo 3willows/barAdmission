@@ -3,7 +3,6 @@ import { useAppContext } from "../Context.js"
 
 export function DataInput({ prop }) {
   const { dispatch } = useAppContext()
-  console.log(typeof prop)
   return (
     <>
       <input

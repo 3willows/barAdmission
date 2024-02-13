@@ -1,12 +1,12 @@
 import { useAppContext } from "../Context.js"
 import { Tab } from "../components/Tab.js"
-import Header from "../components/Header.js"
+import Heading from "../components/AffirmationHeading.js"
 
 export default function NoticeOfMotion() {
   const { applicant, solicitors, year } = useAppContext()
   return (
     <>
-    <Header />
+    <Heading />
       <div className="">NOTICE OF MOTION</div>
       <div className="">
         <p

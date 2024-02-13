@@ -1,11 +1,13 @@
 import { useAppContext } from "../Context.js"
-import Header from "../components/Header.js"
+import Heading from "../components/AffirmationHeading.js"
 import { Tab } from "../components/Tab.js"
+
+
 export default function AffidavitOfIdentity() {
   const { applicant } = useAppContext()
   return (
     <>
-      <Header />
+      <Heading />
       <p className="">  AFFIRMATION OF IDENTITY</p>
     
 <p className="">I, Chan Chung Yin, Victor of 2/F, Wing On Cheong Building, 5 Wing Lok Street, Sheung Wan, Hong Kong, Solicitor, solemnly, sincerely and truly declare and affirm as follows: 
