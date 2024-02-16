@@ -8,6 +8,7 @@ const initialState = {
   solicitorsPhone: "SOLICITORS PHONE",
   solicitorsFax: "SOLICITORS FAX",
   idDeponent: "ID DEPONENT",
+  idDeponentAddress: "ID DEPONENT ADDRESS",
   idAffidavit: false,
   year: new Date().getFullYear(),
   mover: "[Pupil Master]",
@@ -32,6 +33,8 @@ const reducer = (state, action) => {
       return { ...state, solicitorsFax: action.payload }
     case "idDeponent":
       return { ...state, idDeponent: action.payload }
+    case "idDeponentAddress":
+      return { ...state, idDeponentAddress: action.payload }
     case "idAffidavit":
       return { ...state, idAffidavit: action.payload }
     case "year":

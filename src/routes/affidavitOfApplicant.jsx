@@ -1,13 +1,11 @@
 import { useAppContext } from "../Context.js"
 import Heading from "../components/AffirmationHeading.js"
+import abbrev from "../helper/abbrev.js"
 
 export default function AffidavitOfApplicant() {
   const { applicant, applicantAddress, certdate } = useAppContext()
 
-  const abbrev = applicant
-    .split(" ")
-    .map((word) => word[0])
-    .join("")
+  const abbreviation = abbrev(applicant)
 
   return (
     <>
@@ -32,7 +30,7 @@ export default function AffidavitOfApplicant() {
           I have completed at least 6 months of the period of approved pupillage
           specified in Section 10 of the Barristers (Qualification for Admission
           and Pupillage) Rules Cap. 159 sub. Leg AC. There is now produced and
-          shown to me marked {abbrev}-1, a certified true copy of the
+          shown to me marked {abbreviation}-1, a certified true copy of the
           Certificate of Qualification for Admission dated {certdate} issued to
           me by the Hong Kong Bar Association.{" "}
         </li>

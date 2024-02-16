@@ -58,12 +58,14 @@ export default function Root() {
         <p className="">
           Solicitors' fax no. <DataInput prop="solicitorsFax" />
         </p>
-       
       </div>
       <div className="">
-        <h3>Deponent on Identity</h3> 
+        <h3>Deponent on Identity</h3>
         <p className="">
           Name of Deponent <DataInput prop="idDeponent" />
+        </p>
+        <p className="">
+          Deponent Address <DataInput prop="idDeponent" />
         </p>
         <p className="">
           Affidavit?
@@ -89,27 +91,22 @@ export default function Root() {
         </p>
       </div>
       <p className="">
-        <Link to={`applicant`} target="_ref">
+        <Link to={`applicant`}>
           {" "}
           {applicantAffidavit ? "Affidavit" : "Affirmation"} of {applicant}
         </Link>
       </p>{" "}
       <p className="">
-        <Link to={`id`} target="__ref">
+        <Link to={`id`}>
           {" "}
           {idAffidavit ? "Affidavit" : "Affirmation"} of Identity
         </Link>
       </p>
       <p className="">
-        <Link to={`letters`} target="___ref">
-          {" "}
-          Letters to 3 regulators
-        </Link>
+        <Link to={`letters`}> Letters to 3 regulators</Link>
       </p>
       <p className="">
-        <Link to={`notice`} target="_____ref">
-          Notice of Motion
-        </Link>
+        <Link to={`notice`}>Notice of Motion</Link>
       </p>
     </div>
   )
