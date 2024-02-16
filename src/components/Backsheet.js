@@ -1,8 +1,15 @@
 import { useAppContext } from "../Context.js"
 import { Tab } from "./Tab.js"
 
-export default function Heading() {
-  const { applicant, year } = useAppContext()
+export default function Back({ documentTitle }) {
+  const {
+    applicant,
+    year,
+    solicitors,
+    solicitorsAddress,
+    solicitorsPhone,
+    solicitorsFax,
+  } = useAppContext()
   return (
     <>
       <div class="top-right">
@@ -10,12 +17,12 @@ export default function Heading() {
           HCA <Tab />/{year}
         </p>
       </div>
-      <div class="centre">
+      <div className="centre">
         <p>IN THE HIGH COURT OF THE</p>
         <p>HONG KONG SPECIAL ADMINISTRATIVE REGION</p>
         <p>COURT OF FIRST INSTANCE</p>
         <p>
-        MISCELLANEOUS PROCEEDINGS NO. <Tab /> OF {year}
+          MISCELLANEOUS PROCEEDINGS NO. <Tab /> OF {year}
         </p>
       </div>
       <div>
@@ -29,6 +36,20 @@ export default function Heading() {
           IN THE MATTER of Section 27 of the Legal Practitioners Ordinance, Cap.
           159
         </p>
+        <p>{documentTitle}</p>
+      </div>
+      <div className="centre">
+        <p>Dated:</p>
+        <p> Filed on: </p>
+        <p>This affirmation is filed on behalf of the Applicant.</p>
+        <p></p> <p></p> <p></p> <p>{solicitors}</p>
+        <p>
+          <> Solicitors for {applicant}</>
+        </p>
+        <p>{solicitorsAddress}</p>
+        <p>{solicitorsPhone}</p>
+        <p className="">{solicitorsFax}</p>
+        <p>Reference: </p>{" "}
       </div>
     </>
   )
