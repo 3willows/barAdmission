@@ -2,9 +2,10 @@ import { useAppContext } from "../Context.js"
 import Heading from "../components/CommonHeading.js"
 import Backsheet from "../components/Backsheet.js"
 import abbrev from "../helper/abbrev.js"
+import Jurat from "../components/Jurat.js"
 
 export default function AffidavitOfApplicant() {
-  const { applicant, applicantAddress, certdate, applicantAffidavit } =
+  const { applicantAffidavit, applicant, applicantAddress, certdate  } =
     useAppContext()
 
   const abbreviation = abbrev(applicant)
@@ -52,8 +53,8 @@ export default function AffidavitOfApplicant() {
           Court.{" "}
         </li>
       </ol>
-      <p className="">This Affidavit is filed on behalf of the Applicant.</p>
-      <Backsheet documentTitle={documentTitle} />
+     <Jurat affidavit={applicantAffidavit}/>
+       <Backsheet documentTitle={documentTitle} />
     </div>
   )
 }
