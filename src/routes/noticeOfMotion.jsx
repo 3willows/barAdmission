@@ -33,10 +33,35 @@ export default function NoticeOfMotion() {
         </p>
         <p className="">Registrar</p>
       </div>
+      <div className="pagebreak"></div>
       <div className="">
         This Notice of Motion was issued by {solicitors}, [Solicitors' Address],
         Solicitors for the Applicant.
       </div>
+      <div className="top-right">
+        <p className="">{solicitors}</p>
+        <p className=""> Solicitors for the Applicant</p>
+      </div>
+      <p>To:</p>
+      <p>The Registrar</p>
+      <p>High Court</p>
+      <p>38 Queensway</p>
+      <p>Hong Kong</p>
+
+      <p>and</p>
+      <p>The Honorary Secretary</p>
+      <p>Hong Kong Bar Association</p>
+      <p>LG2, High Court</p>
+      <p>38 Queensway</p>
+      <p>Hong Kong</p>
+
+      <p>and</p>
+      <p> The Secretary for Justice</p>
+      <p>Department of Justice</p>
+      <p>6/F, Main and East Wings</p>
+      <p>Justice Place</p>
+      <p>18 Lower Albert Road</p>
+
       <Backsheet documentTitle={documentTitle} />
     </div>
   )

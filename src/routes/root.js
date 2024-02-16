@@ -3,6 +3,18 @@ import { Link } from "react-router-dom"
 import "../App.css"
 import { useAppContext } from "../Context.js"
 import { DataInput } from "../components/DataInput"
+import { useRef } from "react"
+import { useReactToPrint } from "react-to-print"
+import AffidavitOfApplicant from "./affidavitOfApplicant"
+
+const ComponentToPrint = React.forwardRef((props, ref) => {
+  return (
+    <div ref={ref}>
+      <AffidavitOfApplicant />
+    </div>
+  );
+});
+
 
 export default function Root() {
   const [isOpen, setIsOpen] = useState(false)
@@ -19,6 +31,11 @@ export default function Root() {
       dispatch({ type: relevantAffidavit, payload: false })
     }
   }
+
+  const componentRef = useRef()
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  })
 
   return (
     <div className="App">
@@ -78,7 +95,8 @@ export default function Root() {
       <div>
         <h3>Information for the application</h3>
         <p className="">
-          Date of Certificate of Qualification for Admission <DataInput prop="certdate" />
+          Date of Certificate of Qualification for Admission{" "}
+          <DataInput prop="certdate" />
         </p>
         <p className="">
           Year of Application <DataInput prop="year" />
@@ -87,6 +105,10 @@ export default function Root() {
           Name of the Mover for the Applicant <DataInput prop="mover" />
         </p>
       </div>
+      <div>
+       <ComponentToPrint ref={componentRef} class="hidden"/>
+        <button onClick={handlePrint}>Print this out!</button>
+      </div>{" "}
       <p className="">
         <Link to={`notice`}>Notice of Motion</Link>
       </p>
