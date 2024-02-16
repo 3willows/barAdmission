@@ -19,7 +19,7 @@ export default function AffidavitOfIdentity() {
   } OF ${idDeponent.toUpperCase()}`
 
   return (
-    <>
+    <div className="App">
       <Heading />
       <p className="">{documentTitle}</p>
 
@@ -39,6 +39,6 @@ export default function AffidavitOfIdentity() {
         </li>
       </ol>
       <Backsheet documentTitle={documentTitle} />
-    </>
+    </div>
   )
 }

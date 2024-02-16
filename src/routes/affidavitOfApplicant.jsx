@@ -15,7 +15,7 @@ export default function AffidavitOfApplicant() {
         .toUpperCase()}`
 
   return (
-    <>
+    <div className="App">
       <Heading />
       <p className="">documentTitle</p>
       <p className="">
@@ -53,6 +53,6 @@ export default function AffidavitOfApplicant() {
       </ol>
       <p className="">This Affidavit is filed on behalf of the Applicant.</p>
       <Backsheet documentTitle={documentTitle} />
-    </>
+    </div>
   )
 }

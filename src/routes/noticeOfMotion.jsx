@@ -9,7 +9,7 @@ export default function NoticeOfMotion() {
   const documentTitle = "NOTICE OF MOTION"
 
   return (
-    <>
+    <div className="App">
     <Heading />
       <div className="">{documentTitle}</div>
       <div className="">
@@ -38,6 +38,6 @@ export default function NoticeOfMotion() {
         Solicitors for the Applicant.
       </div>
       <Backsheet documentTitle={documentTitle} />
-    </>
+    </div>
   )
 }
