@@ -6,15 +6,23 @@ import { DataInput } from "../components/DataInput"
 import { useRef } from "react"
 import { useReactToPrint } from "react-to-print"
 import AffidavitOfApplicant from "./affidavitOfApplicant"
+import AffidavitOfIdentity from "./affidavitOfIdentity"
+import NoticeOfMotion from "./noticeOfMotion"
+import LettersTo3Regulators from "./letterTo3Regulators"
 
 const ComponentToPrint = React.forwardRef((props, ref) => {
   return (
     <div ref={ref}>
+      <NoticeOfMotion />
+      <div className="pagebreak"></div>
       <AffidavitOfApplicant />
+      <div className="pagebreak"></div>
+      <AffidavitOfIdentity />
+      <div className="pagebreak"></div>
+      <LettersTo3Regulators />
     </div>
-  );
-});
-
+  )
+})
 
 export default function Root() {
   const [isOpen, setIsOpen] = useState(false)
@@ -106,10 +114,12 @@ export default function Root() {
         </p>
       </div>
       <div>
-       <ComponentToPrint ref={componentRef} class="hidden"/>
-        <button onClick={handlePrint}>Print this out!</button>
+        <div className="hidden">
+          <ComponentToPrint ref={componentRef} />
+        </div>
+        <button onClick={handlePrint}>Print All</button>
       </div>{" "}
-      <p className="">
+      {/* <p className="">
         <Link to={`notice`}>Notice of Motion</Link>
       </p>
       <p className="">
@@ -125,7 +135,7 @@ export default function Root() {
       </p>
       <p className="">
         <Link to={`letters`}> Letters to Court, Government and the Bar</Link>
-      </p>
+      </p> */}
     </div>
   )
 }

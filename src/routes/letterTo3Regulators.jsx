@@ -26,7 +26,6 @@ export default function LettersTo3Regulators() {
       <p>18 Lower Albert Road</p>
 
       <LetterBody />
-      <div className="pagebreak"></div>
     </div>
   )
 }

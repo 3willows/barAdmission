@@ -5,7 +5,7 @@ import abbrev from "../helper/abbrev.js"
 import Jurat from "../components/Jurat.js"
 
 export default function AffidavitOfApplicant() {
-  const { applicantAffidavit, applicant, applicantAddress, certdate  } =
+  const { applicantAffidavit, applicant, applicantAddress, certdate } =
     useAppContext()
 
   const abbreviation = abbrev(applicant)
@@ -19,9 +19,9 @@ export default function AffidavitOfApplicant() {
       <Heading />
       <p className="centre">{documentTitle}</p>
       <p className="">
-        I, {applicant} of {applicantAddress}, DO {
-    applicantAffidavit ? "MAKE OATH" : "SOLEMNLY AFFIRM"
-  } and say as follows:-
+        I, {applicant} of {applicantAddress}, DO{" "}
+        {applicantAffidavit ? "MAKE OATH" : "SOLEMNLY AFFIRM"} and say as
+        follows:-
       </p>
       <ol>
         <li>
@@ -53,8 +53,8 @@ export default function AffidavitOfApplicant() {
           Court.{" "}
         </li>
       </ol>
-     <Jurat affidavit={applicantAffidavit}/>
-       <Backsheet documentTitle={documentTitle} />
+      <Jurat affidavit={applicantAffidavit} />
+      <Backsheet documentTitle={documentTitle} />
     </div>
   )
 }

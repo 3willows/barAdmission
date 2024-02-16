@@ -9,60 +9,57 @@ export default function NoticeOfMotion() {
   const documentTitle = "NOTICE OF MOTION"
 
   return (
-    <div className="App">
-      <Heading />
-      <p className="centre">{documentTitle}</p>
-      <div className="">
-        <p
-          className="
-        "
-        >
-          TAKE NOTICE that the High Court of the Hong Kong Special
-          Administrative Region will be moved before the Honourable <Tab /> on{" "}
-          <Tab />, <Tab />
-          <Tab />, <Tab /> at <Tab /> or so soon thereafter as Counsel can be
-          heard on behalf of {applicant} the above-named Applicant for an Order
-          that the said {applicant} be admitted and enrolled as a Barrister of
-          the High Court of the Hong Kong Special Administrative Region.
-        </p>
+    <>
+      <div className="App">
+        <Heading />
+        <p className="centre">{documentTitle}</p>
+        <div className="">
+          <p>
+            TAKE NOTICE that the High Court of the Hong Kong Special
+            Administrative Region will be moved before the Honourable <Tab /> on{" "}
+            <Tab />, <Tab />
+            <Tab />, <Tab /> at <Tab /> or so soon thereafter as Counsel can be
+            heard on behalf of {applicant} the above-named Applicant for an
+            Order that the said {applicant} be admitted and enrolled as a
+            Barrister of the High Court of the Hong Kong Special Administrative
+            Region.
+          </p>
+        </div>
+        <div className="">
+          <p className="">
+            {" "}
+            Dated this <Tab /> day of <Tab /> {year}
+          </p>
+          <p className="">Registrar</p>
+        </div>
       </div>
-      <div className="">
-        <p className="">
-          {" "}
-          Dated this <Tab /> day of <Tab /> {year}
-        </p>
-        <p className="">Registrar</p>
+      <div className="App">
+        <div className="pagebreak"></div> <br></br> This Notice of Motion was
+        issued by {solicitors}, [Solicitors' Address], Solicitors for the
+        Applicant.
+        <div className="top-right">
+          <p className="">{solicitors}</p>
+          <p className=""> Solicitors for the Applicant</p>
+        </div>
+        <p>To:</p>
+        <p>The Registrar</p>
+        <p>High Court</p>
+        <p>38 Queensway</p>
+        <p>Hong Kong</p>
+        <p>and</p>
+        <p>The Honorary Secretary</p>
+        <p>Hong Kong Bar Association</p>
+        <p>LG2, High Court</p>
+        <p>38 Queensway</p>
+        <p>Hong Kong</p>
+        <p>and</p>
+        <p> The Secretary for Justice</p>
+        <p>Department of Justice</p>
+        <p>6/F, Main and East Wings</p>
+        <p>Justice Place</p>
+        <p>18 Lower Albert Road</p>
+        <Backsheet documentTitle={documentTitle} />
       </div>
-      <div className="pagebreak"></div>
-      <div className="">
-        This Notice of Motion was issued by {solicitors}, [Solicitors' Address],
-        Solicitors for the Applicant.
-      </div>
-      <div className="top-right">
-        <p className="">{solicitors}</p>
-        <p className=""> Solicitors for the Applicant</p>
-      </div>
-      <p>To:</p>
-      <p>The Registrar</p>
-      <p>High Court</p>
-      <p>38 Queensway</p>
-      <p>Hong Kong</p>
-
-      <p>and</p>
-      <p>The Honorary Secretary</p>
-      <p>Hong Kong Bar Association</p>
-      <p>LG2, High Court</p>
-      <p>38 Queensway</p>
-      <p>Hong Kong</p>
-
-      <p>and</p>
-      <p> The Secretary for Justice</p>
-      <p>Department of Justice</p>
-      <p>6/F, Main and East Wings</p>
-      <p>Justice Place</p>
-      <p>18 Lower Albert Road</p>
-
-      <Backsheet documentTitle={documentTitle} />
-    </div>
+    </>
   )
 }
