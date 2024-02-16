@@ -1,7 +1,7 @@
 import { useAppContext } from "../Context.js"
 import { Tab } from "./Tab.js"
 
-export default function Back({ documentTitle }) {
+export default function Backsheet({ documentTitle }) {
   const {
     applicant,
     year,
@@ -12,7 +12,7 @@ export default function Back({ documentTitle }) {
   } = useAppContext()
   return (
     <>
-    <div className="pagebreak"></div>
+      <div className="pagebreak"></div>
       <div class="top-right">
         <p>
           HCA <Tab />/{year}
@@ -37,20 +37,19 @@ export default function Back({ documentTitle }) {
           IN THE MATTER of Section 27 of the Legal Practitioners Ordinance, Cap.
           159
         </p>
-        <p>{documentTitle}</p>
+        <p className="centre">{documentTitle}</p>
       </div>
       <div className="centre">
         <p>Dated:</p>
-        <p> Filed on: </p>
-        <p>This affirmation is filed on behalf of the Applicant.</p>
-        <p></p> <p></p> <p></p> <p>{solicitors}</p>
+        <p> Filed on: </p> 
+        <p>{solicitors}</p>
         <p>
           <> Solicitors for {applicant}</>
         </p>
         <p>{solicitorsAddress}</p>
-        <p>{solicitorsPhone}</p>
-        <p className="">{solicitorsFax}</p>
-        <p>Reference: </p>{" "}
+        <p>Tel: {solicitorsPhone}</p>
+        <p>Fax: {solicitorsFax}</p>
+        <p>Reference: </p>
       </div>
     </>
   )

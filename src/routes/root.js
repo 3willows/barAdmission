@@ -47,13 +47,13 @@ export default function Root() {
       <div className="">
         <h3>The Solicitors</h3>
         <p className="">
-          Name of Solicitors for the Applicant: <DataInput prop="solicitors" />
+          Name of Solicitors for the Applicant <DataInput prop="solicitors" />
         </p>
         <p className="">
-          Solicitors' Address: <DataInput prop="solicitorsAddress" />
+          Solicitors' Address <DataInput prop="solicitorsAddress" />
         </p>
         <p className="">
-          Solicitors' phone no: <DataInput prop="solicitorsPhone" />
+          Solicitors' phone no <DataInput prop="solicitorsPhone" />
         </p>
         <p className="">
           Solicitors' fax no. <DataInput prop="solicitorsFax" />
@@ -78,16 +78,13 @@ export default function Root() {
       <div>
         <h3>Information for the application</h3>
         <p className="">
-          Date of Certificate of Qualification for Admission
-          <DataInput prop="certdate" />
+          Date of Certificate of Qualification for Admission <DataInput prop="certdate" />
         </p>
         <p className="">
-          Year of Application:
-          <DataInput prop="year" />
+          Year of Application <DataInput prop="year" />
         </p>
         <p className="">
-          Name of the Mover for the Applicant:
-          <DataInput prop="mover" />
+          Name of the Mover for the Applicant <DataInput prop="mover" />
         </p>
       </div>
       <p className="">

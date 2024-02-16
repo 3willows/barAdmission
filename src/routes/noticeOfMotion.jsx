@@ -1,6 +1,6 @@
 import { useAppContext } from "../Context.js"
 import { Tab } from "../components/Tab.js"
-import Heading from "../components/AffirmationHeading.js"
+import Heading from "../components/CommonHeading.js"
 import Backsheet from "../components/Backsheet.js"
 
 export default function NoticeOfMotion() {
@@ -10,8 +10,8 @@ export default function NoticeOfMotion() {
 
   return (
     <div className="App">
-    <Heading />
-      <div className="">{documentTitle}</div>
+      <Heading />
+      <p className="centre">{documentTitle}</p>
       <div className="">
         <p
           className="
@@ -34,7 +34,7 @@ export default function NoticeOfMotion() {
         <p className="">Registrar</p>
       </div>
       <div className="">
-        This Notice of Motion was issued by {solicitors}, [Solicitors' Address]
+        This Notice of Motion was issued by {solicitors}, [Solicitors' Address],
         Solicitors for the Applicant.
       </div>
       <Backsheet documentTitle={documentTitle} />

@@ -1,5 +1,5 @@
 import { useAppContext } from "../Context.js"
-import Heading from "../components/AffirmationHeading.js"
+import Heading from "../components/CommonHeading.js"
 import Backsheet from "../components/Backsheet.js"
 import abbrev from "../helper/abbrev.js"
 
@@ -11,15 +11,16 @@ export default function AffidavitOfApplicant() {
 
   const documentTitle = `${
     applicantAffidavit ? "AFFIDAVIT" : "AFFIRMATION"
-  } OF ${applicant
-        .toUpperCase()}`
+  } OF ${applicant.toUpperCase()}`
 
   return (
     <div className="App">
       <Heading />
-      <p className="">documentTitle</p>
+      <p className="centre">{documentTitle}</p>
       <p className="">
-        I, {applicant} of {applicantAddress}, MAKE OATH and say as follows:-
+        I, {applicant} of {applicantAddress}, DO {
+    applicantAffidavit ? "MAKE OATH" : "SOLEMNLY AFFIRM"
+  } and say as follows:-
       </p>
       <ol>
         <li>

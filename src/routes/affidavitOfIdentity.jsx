@@ -1,5 +1,5 @@
 import { useAppContext } from "../Context.js"
-import Heading from "../components/AffirmationHeading.js"
+import Heading from "../components/CommonHeading.js"
 import { Tab } from "../components/Tab.js"
 import abbrev from "../helper/abbrev.js"
 import Backsheet from "../components/Backsheet.js"
@@ -21,7 +21,7 @@ export default function AffidavitOfIdentity() {
   return (
     <div className="App">
       <Heading />
-      <p className="">{documentTitle}</p>
+      <p className="centre">{documentTitle}</p>
 
       <p className="">
         I, {idDeponent} of {idDeponentAddress}, solemnly, sincerely and truly
