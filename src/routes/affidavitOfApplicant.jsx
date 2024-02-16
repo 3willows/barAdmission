@@ -3,14 +3,18 @@ import Heading from "../components/AffirmationHeading.js"
 import abbrev from "../helper/abbrev.js"
 
 export default function AffidavitOfApplicant() {
-  const { applicant, applicantAddress, certdate } = useAppContext()
+  const { applicant, applicantAddress, certdate, applicantAffidavit } =
+    useAppContext()
 
   const abbreviation = abbrev(applicant)
 
   return (
     <>
       <Heading />
-      <p className="">AFFIDAVIT OF {applicant}</p>
+      <p className="">
+        {applicantAffidavit ? "AFFIDAVIT" : "AFFIRMATION"} OF {applicant
+        .toUpperCase()}
+      </p>
       <p className="">
         I, {applicant} of {applicantAddress}, MAKE OATH and say as follows:-
       </p>

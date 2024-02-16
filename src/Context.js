@@ -5,6 +5,7 @@ const initialState = {
   applicantAddress: "APPLICANT ADDRESS",
   applicantAffidavit: false,
   solicitors: "SOLICITORS",
+  solicitorsAddress: "SOLICITORS ADDRESS",
   solicitorsPhone: "SOLICITORS PHONE",
   solicitorsFax: "SOLICITORS FAX",
   idDeponent: "ID DEPONENT",
@@ -27,6 +28,8 @@ const reducer = (state, action) => {
       return { ...state, applicantAffidavit: action.payload }
     case "solicitors":
       return { ...state, solicitors: action.payload }
+      case "solicitorsAddress":
+        return { ...state, solicitorsAddress: action.payload }
     case "solicitorsPhone":
       return { ...state, solicitorsPhone: action.payload }
     case "solicitorsFax":

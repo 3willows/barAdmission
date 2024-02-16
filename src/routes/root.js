@@ -91,22 +91,21 @@ export default function Root() {
         </p>
       </div>
       <p className="">
+        <Link to={`notice`}>Notice of Motion</Link>
+      </p>
+      <p className="">
         <Link to={`applicant`}>
-          {" "}
-          {applicantAffidavit ? "Affidavit" : "Affirmation"} of {applicant}
+          {applicantAffidavit ? "AFFIDAVIT" : "AFFIRMATION"} OF{" "}
+          {applicant.toUpperCase()}
         </Link>
       </p>{" "}
       <p className="">
         <Link to={`id`}>
-          {" "}
-          {idAffidavit ? "Affidavit" : "Affirmation"} of Identity
+          {idAffidavit ? "AFFIDAVIT" : "AFFIRMATION"} OF IDENTITY
         </Link>
       </p>
       <p className="">
-        <Link to={`letters`}> Letters to 3 regulators</Link>
-      </p>
-      <p className="">
-        <Link to={`notice`}>Notice of Motion</Link>
+        <Link to={`letters`}> Letters to Court, Government and the Bar</Link>
       </p>
     </div>
   )
