@@ -7,9 +7,13 @@ import AffidavitOfIdentity from "./affidavitOfIdentity"
 import NoticeOfMotion from "./noticeOfMotion"
 import LettersTo3Regulators from "./letterTo3Regulators"
 
-import { createHashRouter, RouterProvider } from "react-router-dom"
+import {
+  HashRouter,
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom"
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
@@ -33,12 +37,10 @@ const router = createHashRouter([
   },
 ])
 
-
-
 export default function App() {
   return (
     <div className="App">
-      <Root />
+        <RouterProvider router={router} />
     </div>
   )
 }

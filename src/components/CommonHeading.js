@@ -5,12 +5,12 @@ export default function Heading() {
   const { applicant, year } = useAppContext()
   return (
     <>
-      <div class="top-right">
+      <div className="top-right">
         <p>
           HCA <Tab />/{year}
         </p>
       </div>
-      <div class="centre">
+      <div className="centre">
         <p>IN THE HIGH COURT OF THE</p>
         <p>HONG KONG SPECIAL ADMINISTRATIVE REGION</p>
         <p>COURT OF FIRST INSTANCE</p>

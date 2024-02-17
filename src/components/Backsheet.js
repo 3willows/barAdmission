@@ -13,7 +13,7 @@ export default function Backsheet({ documentTitle }) {
   return (
     <>
       <div className="pagebreak"></div>
-      <div class="top-right">
+      <div className="top-right">
         <p>
           HCA <Tab />/{year}
         </p>
