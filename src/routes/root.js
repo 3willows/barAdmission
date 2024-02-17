@@ -46,7 +46,7 @@ export default function Root() {
     content: () => componentRef.current,
   })
   return (
-    <div>
+    <div className="App">
       <h1>Barrister Admission Bundle</h1>
       <button onClick={toggleFan}>
         {isOpen
