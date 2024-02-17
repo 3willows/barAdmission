@@ -7,40 +7,18 @@ import AffidavitOfIdentity from "./affidavitOfIdentity"
 import NoticeOfMotion from "./noticeOfMotion"
 import LettersTo3Regulators from "./letterTo3Regulators"
 
-import {
-  HashRouter,
-  RouterProvider,
-  createBrowserRouter,
-} from "react-router-dom"
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Root />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "notice",
-    element: <NoticeOfMotion />,
-  },
-  {
-    path: "applicant",
-    element: <AffidavitOfApplicant />,
-  },
-  {
-    path: "id",
-    element: <AffidavitOfIdentity />,
-  },
-  {
-    path: "letters",
-    element: <LettersTo3Regulators />,
-  },
-])
+import { Routes, Route, HashRouter } from "react-router-dom"
 
 export default function App() {
   return (
-    <div className="App">
-        <RouterProvider router={router} />
-    </div>
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<Root />} />
+        <Route path="notice" element={<NoticeOfMotion />} />
+        <Route path="applicant" element={<AffidavitOfApplicant />} />
+        <Route path="id" element={<AffidavitOfIdentity />} />
+        <Route path="letters" element={<LettersTo3Regulators />} />
+      </Routes>
+    </HashRouter>
   )
 }

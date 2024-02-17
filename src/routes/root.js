@@ -119,7 +119,7 @@ export default function Root() {
         </div>
         <button onClick={handlePrint}>Print All</button>
       </div>{" "}
-      {/* <p className="">
+      <p className="">
         <Link to={`notice`}>Notice of Motion</Link>
       </p>
       <p className="">
@@ -135,7 +135,7 @@ export default function Root() {
       </p>
       <p className="">
         <Link to={`letters`}> Letters to Court, Government and the Bar</Link>
-      </p> */}
+      </p>
     </div>
   )
 }
