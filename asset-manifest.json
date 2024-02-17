@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/baradmission/static/css/main.cc29f9a4.css",
+    "main.js": "/baradmission/static/js/main.ebf03147.js",
+    "index.html": "/baradmission/index.html",
+    "main.cc29f9a4.css.map": "/baradmission/static/css/main.cc29f9a4.css.map",
+    "main.ebf03147.js.map": "/baradmission/static/js/main.ebf03147.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cc29f9a4.css",
+    "static/js/main.ebf03147.js"
+  ]
+}
