@@ -47,7 +47,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Barrister Admissions Bundle</h1>
+      <h1>Barrister Admission Bundle</h1>
       <button onClick={toggleFan}>
         {isOpen
           ? "Just a quick primer: remember to do your own homework!"
