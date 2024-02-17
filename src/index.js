@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client"
 import "./index.css"
 import { createHashRouter, RouterProvider } from "react-router-dom"
 
-import Root from "./routes/root"
+import App from "./routes/App"
 import NoticeOfMotion from "./routes/noticeOfMotion"
 import AffidavitOfApplicant from "./routes/affidavitOfApplicant"
 import AffidavitOfIdentity from "./routes/affidavitOfIdentity"
@@ -15,7 +15,7 @@ import { ContextProvider } from "./Context.js"
 const router = createHashRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <App/>,
     errorElement: <ErrorPage />,
   },
   {

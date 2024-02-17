@@ -24,7 +24,7 @@ const ComponentToPrint = React.forwardRef((props, ref) => {
   )
 })
 
-export default function Root() {
+export default function App() {
   const [isOpen, setIsOpen] = useState(false)
   const { applicant, applicantAffidavit, idAffidavit, dispatch } =
     useAppContext()
