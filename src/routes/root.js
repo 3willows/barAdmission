@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 import "../App.css"
 import { useAppContext } from "../Context.js"
 import { DataInput } from "../components/DataInput"
@@ -27,11 +27,10 @@ const ComponentToPrint = React.forwardRef((props, ref) => {
 
 export default function Root() {
   const [isOpen, setIsOpen] = useState(false)
-  const { applicant, applicantAffidavit, idAffidavit, dispatch } =
-    useAppContext()
-  const toggleFan = () => {
-    setIsOpen(!isOpen)
-  }
+  const { dispatch } = useAppContext()
+  // const toggleFan = () => {
+  //   setIsOpen(!isOpen)
+  // }
 
   function handleAffidavit(relevantAffidavit, e) {
     if (e.target.checked) {
@@ -47,77 +46,95 @@ export default function Root() {
   })
   return (
     <div className="App">
-      <h1>Barrister Admission Bundle</h1>
-      <button onClick={toggleFan}>
+      <header>
+        <h1>Barrister Admission Bundle</h1>
+        <nav>
+         <ul >
+          <li>Getting started</li>
+          <select>
+            <option>Indivdual document</option>
+            <option>Notice of Motion</option>
+            <option>Applicant's Affirmation</option>
+            <option>Affirmation of Identity</option>
+            <option>Cover letters</option>
+          </select>
+          </ul> 
+        </nav>
+      </header>
+      {/* <button onClick={toggleFan}>
         {isOpen
           ? "Just a quick primer: remember to do your own homework!"
           : "NOTES"}
-      </button>
-      <div className="">
-        <h3>The Applicant</h3>
-      </div>
-      <p className="">
-        Applicant Name <DataInput prop="applicant" />
-      </p>
-      <p className="">
-        Applicant Address <DataInput prop="applicantAddress" />
-      </p>
-      <p className="">
-        Affidavit?
-        <input
-          type="checkbox"
-          onChange={(e) => handleAffidavit("applicantAffidavit", e)}
-        ></input>
-      </p>
-      <div className="">
-        <h3>The Solicitors</h3>
+      </button> */}
+      <main>
+        <div className="">
+          <h3>The Applicant</h3>
+        </div>
         <p className="">
-          Name of Solicitors for the Applicant <DataInput prop="solicitors" />
+          Applicant Name <DataInput prop="applicant" />
         </p>
         <p className="">
-          Solicitors' Address <DataInput prop="solicitorsAddress" />
-        </p>
-        <p className="">
-          Solicitors' phone no <DataInput prop="solicitorsPhone" />
-        </p>
-        <p className="">
-          Solicitors' fax no. <DataInput prop="solicitorsFax" />
-        </p>
-      </div>
-      <div className="">
-        <h3>Deponent on Identity</h3>
-        <p className="">
-          Name of Deponent <DataInput prop="idDeponent" />
-        </p>
-        <p className="">
-          Deponent Address <DataInput prop="idDeponent" />
+          Applicant Address <DataInput prop="applicantAddress" />
         </p>
         <p className="">
           Affidavit?
           <input
             type="checkbox"
-            onChange={(e) => handleAffidavit("idAffidavit", e)}
+            onChange={(e) => handleAffidavit("applicantAffidavit", e)}
           ></input>
         </p>
-      </div>
-      <div>
-        <h3>Information for the application</h3>
-        <p className="">
-          Date of Certificate of Qualification for Admission{" "}
-          <DataInput prop="certdate" />
-        </p>
-        <p className="">
-          Year of Application <DataInput prop="year" />
-        </p>
-        <p className="">
-          Name of the Mover for the Applicant <DataInput prop="mover" />
-        </p>
-      </div>
-      <div>
+        <div className="">
+          <h3>The Solicitors</h3>
+          <p className="">
+            Name of Solicitors for the Applicant <DataInput prop="solicitors" />
+          </p>
+          <p className="">
+            Solicitors' Address <DataInput prop="solicitorsAddress" />
+          </p>
+          <p className="">
+            Solicitors' phone no <DataInput prop="solicitorsPhone" />
+          </p>
+          <p className="">
+            Solicitors' fax no. <DataInput prop="solicitorsFax" />
+          </p>
+        </div>
+        <div className="">
+          <h3>Deponent on Identity</h3>
+          <p className="">
+            Name of Deponent <DataInput prop="idDeponent" />
+          </p>
+          <p className="">
+            Deponent Address <DataInput prop="idDeponent" />
+          </p>
+          <p className="">
+            Affidavit?
+            <input
+              type="checkbox"
+              onChange={(e) => handleAffidavit("idAffidavit", e)}
+            ></input>
+          </p>
+        </div>
+        <div>
+          <h3>Information for the application</h3>
+          <p className="">
+            Date of Certificate of Qualification for Admission{" "}
+            <DataInput prop="certdate" />
+          </p>
+          <p className="">
+            Year of Application <DataInput prop="year" />
+          </p>
+          <p className="">
+            Name of the Mover for the Applicant <DataInput prop="mover" />
+          </p>
+        </div>{" "}
         <div className="hidden">
           <ComponentToPrint ref={componentRef} />
-        </div>
-        <button onClick={handlePrint}>Print All</button>
+        </div>{" "}
+        <button onClick={handlePrint}>Print All</button>{" "}
+      </main>
+
+      {/* <div>
+     
       </div>{" "}
       <p className="">
         <Link to={`notice`}>Notice of Motion</Link>
@@ -135,7 +152,7 @@ export default function Root() {
       </p>
       <p className="">
         <Link to={`letters`}> Letters to Court, Government and the Bar</Link>
-      </p>
+      </p> */}
     </div>
   )
 }
