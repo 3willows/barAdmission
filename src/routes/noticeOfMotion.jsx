@@ -10,7 +10,7 @@ export default function NoticeOfMotion() {
 
   return (
     <div className="justify-btween m-5 flex flex-col">
-      <div className="grid grid-cols-4">
+      <div className="grid grid-cols-3">
         <div className="">
           <div className="border border-black"> Claim nature:</div>
           <div className="border border-black"> A. Non-monetary cliam only</div>
