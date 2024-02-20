@@ -41,22 +41,37 @@ export default function Root() {
     content: () => componentRef.current,
   });
   return (
-    <div className="text-slate-300bg-slate-600 m-2 min-h-screen bg-slate-800">
+    <div className="text-8 min-h-100vh m-2 flex h-screen flex-col bg-slate-800 text-lg">
       <header className="bg-slate-600">
-        <h1 className="m-1 text-center">Barrister Admission Bundle</h1>
-        <nav className="m-1 flex  flex-row gap-x-1  bg-slate-600">
-          <div className="m-1 border border-slate-100">About</div>
-          <div className="m-1 border border-slate-100">Documents</div>
-          <div className="m-1 border border-slate-100">Technology</div>
-          <div className="m-1 border border-slate-100">Philosophy</div>
+        <h1 className="sticky m-1 mt-2 text-center">
+          Barrister Admission Bundle
+        </h1>
+        <nav className="m-1 flex flex-row gap-x-1 bg-slate-600">
+          <button
+            className=" m-1 "
+            onClick={() => setPage((prev) => "Welcome")}
+          >
+            About
+          </button>
+          <select
+            onChange={(e) => setPage((prev) => e.target.value)}
+            className=" m-1"
+          >
+            <option>Documents</option>
+            <option value="Notice">Notice of Motion</option>
+            <option value="Notice">Notice of Motion</option>
+          </select>
+          <div className=" m-1">Technology</div>
+          <div className=" m-1">Philosophy</div>
         </nav>
       </header>
       <main>
+        {page === "Notice" && <NoticeOfMotion />}
         {page === "Welcome" && (
           <article className="">
-            <p className="">
+            <p className="py-4">
               This is a webpage designed to let you create all the necessary
-              Court documents for barrister admission in Hong Kongin one go.
+              Court documents for barrister admission in Hong Kong in one go.
             </p>
             <p className="m-1 text-center">
               <button
@@ -139,12 +154,12 @@ export default function Root() {
         </div>
         <article className="m-1 text-center">
           <button onClick={handlePrint} className="bg-slate-600">
-            Print {page === "Welcome" ? `Sample` : `All`}
+            Print {page === "Welcome" ? `Sample` : `Bundle`}
           </button>{" "}
         </article>
       </main>
-      <footer className="m-1 bg-slate-600 text-center">
-        Creative Commons Licence
+      <footer className="mt-auto  bg-slate-600 text-center">
+        <p className="">Creative Commons Licence</p>
       </footer>
     </div>
   );
