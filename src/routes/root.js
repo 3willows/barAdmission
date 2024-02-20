@@ -81,7 +81,7 @@ export default function Root() {
         </article>
       </main>
       <footer className="mt-auto  bg-slate-600 text-center">
-        <p className="">Creative Commons Licence</p>
+        <p className="">MIT License</p>
       </footer>
     </div>
   );
