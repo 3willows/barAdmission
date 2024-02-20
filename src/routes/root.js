@@ -37,7 +37,7 @@ export default function Root() {
         <h1 className="sticky m-1 mt-2 text-center text-xl">
           Barrister Admission Bundle
         </h1>
-        <nav className="m-1 grid grid-cols-4 justify-between gap-x-1 bg-slate-600">
+        <nav className="m-1 grid grid-cols-3 justify-between gap-x-1 bg-slate-600 p-1">
           <button
             className="text-center"
             onClick={() => setPage((prev) => "Welcome")}
@@ -54,15 +54,6 @@ export default function Root() {
             <option value="ID">Affirmation of Identity</option>
             <option value="Letters">Cover letters</option>
           </select>
-          <div className="text-center">
-            <a
-              href="https://github.com/3willows/barAdmission"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Source Code
-            </a>
-          </div>
           <button
             className="text-center"
             onClick={() => setPage((prev) => "Philosophy")}
@@ -84,8 +75,8 @@ export default function Root() {
           <ComponentToPrint ref={componentRef} />
         </div>
         <article className="m-1 text-center">
-          <button onClick={handlePrint} className="bg-slate-600">
-            Print {page === "Welcome" ? `Sample` : `Bundle`}
+          <button onClick={handlePrint} className="m-2 bg-slate-600 p-2">
+            Print {page === "Info" ? `Bundle` : `Sample`}
           </button>{" "}
         </article>
       </main>
@@ -129,8 +120,17 @@ function PhilosophyPage() {
           <li>
             <p>
               But let’s see if future barristers find the information here
-              useful first! Feedback on user experience, design, or technical
-              matters are welcome.
+              useful first! Feedback on user experience, design, or the{" "}
+              <u>
+                <a
+                  href="https://github.com/3willows/barAdmission"
+                  target="blank"
+                  rel="noopener noreferrer"
+                >
+                  source code{" "}
+                </a>
+              </u>
+              are welcome.
             </p>
           </li>
         </ol>

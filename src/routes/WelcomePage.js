@@ -11,7 +11,7 @@ export function WelcomePage({ setPage }) {
         <p className="m-1 text-center">
           <button
             onClick={() => setPage((prev) => "Info")}
-            className="bg-slate-600"
+            className="m-2 bg-slate-600 p-2"
           >
             Enter information
           </button>
