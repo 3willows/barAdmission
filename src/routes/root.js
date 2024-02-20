@@ -14,11 +14,11 @@ const ComponentToPrint = React.forwardRef((props, ref) => {
   return (
     <div ref={ref}>
       <NoticeOfMotion />
-      <div className="break-after-auto"></div>
+      <div className="pagebreak"></div>
       <AffidavitOfApplicant />
-      <div className="break-after-auto"></div>
+      <div className="pagebreak"></div>
       <AffidavitOfIdentity />
-      <div className="break-after-auto"></div>
+      <div className="pagebreak"></div>
       <LettersTo3Regulators />
     </div>
   );
@@ -32,7 +32,7 @@ export default function Root() {
   });
 
   return (
-    <div className="min-h-100vh m-2 flex h-screen flex-col bg-slate-800 text-lg">
+    <div className="min-h-100vh m-2 flex h-screen flex-col bg-slate-800 font-serif text-lg">
       <header className="">
         <h1 className="sticky m-1 mt-2 text-center text-xl">
           Barrister Admission Bundle

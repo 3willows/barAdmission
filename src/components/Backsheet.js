@@ -1,5 +1,5 @@
-import { useAppContext } from "../Context.js"
-import { Tab } from "./Tab.js"
+import { useAppContext } from "../Context.js";
+import { Tab } from "./Tab.js";
 
 export default function Backsheet({ documentTitle }) {
   const {
@@ -9,9 +9,9 @@ export default function Backsheet({ documentTitle }) {
     solicitorsAddress,
     solicitorsPhone,
     solicitorsFax,
-  } = useAppContext()
+  } = useAppContext();
   return (
-    <div className="flex flex-col">
+    <div className="justify-btween m-5 flex flex-col">
       <div className="pagebreak"></div>
       <div className="text-right">
         <p>
@@ -27,30 +27,45 @@ export default function Backsheet({ documentTitle }) {
         </p>
       </div>
       <div>
-        <p className="">
-          IN THE MATTER of the Application of {applicant} for admission as a
-          Barrister of the High Court of the Hong Kong Special Administrative
-          Region
-        </p>
-        <p className="">and</p>
-        <p className="">
-          IN THE MATTER of Section 27 of the Legal Practitioners Ordinance, Cap.
-          159
-        </p>
-        <p className="text-center">{documentTitle}</p>
+        <div className="grid grid-cols-2 gap-4 my-4">
+          <span></span>
+          <div className="">
+            <p className="">
+              IN THE MATTER of the Application of {applicant} for admission as a
+              Barrister of the High Court of the Hong Kong Special
+              Administrative Region
+            </p>
+            <p className="">and</p>
+            <p className="">
+              IN THE MATTER of Section 27 of the Legal Practitioners Ordinance,
+              Cap. 159
+            </p>
+          </div>
+        </div>
+        <p className="mb-5 mt-5 text-center">{documentTitle}</p>
       </div>
-      <div className="text-center">
-        <p>Dated:</p>
-        <p> Filed on: </p> 
-        <p>{solicitors}</p>
-        <p>
-          <> Solicitors for {applicant}</>
-        </p>
-        <p>{solicitorsAddress}</p>
-        <p>Tel: {solicitorsPhone}</p>
-        <p>Fax: {solicitorsFax}</p>
-        <p>Reference: </p>
+      <div className="">
+        <div className="grid grid-cols-3 gap-4">
+          <span></span>
+          <div className="">
+            {" "}
+            <p>Dated:</p>
+            <p> Filed on: </p>
+          </div>
+          <span></span>
+        </div>
+
+        <div className="text-center">
+          <p>{solicitors}</p>
+          <p>
+            <> Solicitors for {applicant}</>
+          </p>
+          <p>{solicitorsAddress}</p>
+          <p>Tel: {solicitorsPhone}</p>
+          <p>Fax: {solicitorsFax}</p>
+          <p>Reference: </p>
+        </div>
       </div>
     </div>
-  )
+  );
 }
