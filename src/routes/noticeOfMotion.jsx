@@ -10,10 +10,17 @@ export default function NoticeOfMotion() {
 
   return (
     <div className="justify-btween m-5 flex flex-col">
+      <div className="grid grid-cols-4">
+        <div className="">
+          <div className="border border-black"> Claim nature:</div>
+          <div className="border border-black"> A. Non-monetary cliam only</div>
+          <div className="border border-black"> B. Profession (Barristers)</div>
+        </div>
+      </div>
       <div>
         <Heading />
         <p className="my-5 text-center">{documentTitle}</p>
-        <div className="">
+        <div className="m-5">
           <p>
             TAKE NOTICE that the High Court of the Hong Kong Special
             Administrative Region will be moved before the Honourable <Tab /> on{" "}
@@ -25,7 +32,7 @@ export default function NoticeOfMotion() {
             Region.
           </p>
         </div>
-        <div className="">
+        <div className="m-5">
           <p className="">
             {" "}
             Dated this <Tab /> day of <Tab /> {year}
@@ -33,10 +40,10 @@ export default function NoticeOfMotion() {
           <p className="">Registrar</p>
         </div>
       </div>
-      <div className="App">
-        <div className="pagebreak"></div> <br></br> This Notice of Motion was
-        issued by {solicitors}, [Solicitors' Address], Solicitors for the
-        Applicant.
+      <div className="pagebreak"></div>{" "}
+      <div className="m-5">
+        <br></br> This Notice of Motion was issued by {solicitors}, [Solicitors'
+        Address], Solicitors for the Applicant.
         <div className="top-right">
           <p className="">{solicitors}</p>
           <p className=""> Solicitors for the Applicant</p>
