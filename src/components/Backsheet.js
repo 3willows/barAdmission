@@ -11,14 +11,14 @@ export default function Backsheet({ documentTitle }) {
     solicitorsFax,
   } = useAppContext()
   return (
-    <>
+    <div className="flex flex-col">
       <div className="pagebreak"></div>
-      <div className="top-right">
+      <div className="text-right">
         <p>
           HCA <Tab />/{year}
         </p>
       </div>
-      <div className="centre">
+      <div className="text-center">
         <p>IN THE HIGH COURT OF THE</p>
         <p>HONG KONG SPECIAL ADMINISTRATIVE REGION</p>
         <p>COURT OF FIRST INSTANCE</p>
@@ -37,9 +37,9 @@ export default function Backsheet({ documentTitle }) {
           IN THE MATTER of Section 27 of the Legal Practitioners Ordinance, Cap.
           159
         </p>
-        <p className="centre">{documentTitle}</p>
+        <p className="text-center">{documentTitle}</p>
       </div>
-      <div className="centre">
+      <div className="text-center">
         <p>Dated:</p>
         <p> Filed on: </p> 
         <p>{solicitors}</p>
@@ -51,6 +51,6 @@ export default function Backsheet({ documentTitle }) {
         <p>Fax: {solicitorsFax}</p>
         <p>Reference: </p>
       </div>
-    </>
+    </div>
   )
 }

@@ -15,15 +15,15 @@ export default function AffidavitOfApplicant() {
   } OF ${applicant.toUpperCase()}`
 
   return (
-    <div className="App">
+    <div className="m-5">
       <Heading />
-      <p className="centre">{documentTitle}</p>
+      <p className="text-center">{documentTitle}</p>
       <p className="">
         I, {applicant} of {applicantAddress}, DO{" "}
         {applicantAffidavit ? "MAKE OATH" : "SOLEMNLY AFFIRM"} and say as
         follows:-
       </p>
-      <ol>
+      <ol className="list-decimal m-5">
         <li>
           I am the Applicant in these proceedings. I make this Affidavit in
           support of my application to be admitted as a barrister under Section
