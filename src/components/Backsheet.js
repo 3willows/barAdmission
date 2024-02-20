@@ -12,7 +12,6 @@ export default function Backsheet({ documentTitle }) {
   } = useAppContext();
   return (
     <div>
-      <div className="pagebreak"></div>
       <div className="m-5 flex flex-col justify-between">
         <div className="text-right">
           <p>
@@ -59,7 +58,7 @@ export default function Backsheet({ documentTitle }) {
           <div className="text-center mt-auto">
             <p>{solicitors}</p>
             <p>
-              <> Solicitors for {applicant}</>
+              Solicitors for the Applicant
             </p>
             <p>{solicitorsAddress}</p>
             <p>Tel: {solicitorsPhone}</p>

@@ -4,21 +4,14 @@ import Heading from "../components/CommonHeading.js";
 import Backsheet from "../components/Backsheet.js";
 
 export default function NoticeOfMotion() {
-  const { applicant, solicitors, year } = useAppContext();
+  const { applicant, solicitors, solicitorsAddress, year } = useAppContext();
 
   const documentTitle = "NOTICE OF MOTION";
 
   return (
     <div className="justify-btween m-5 flex flex-col">
-      <div className="grid grid-cols-3">
-        <div className="">
-          <div className="border border-black"> Claim nature:</div>
-          <div className="border border-black"> A. Non-monetary cliam only</div>
-          <div className="border border-black"> B. Profession (Barristers)</div>
-        </div>
-      </div>
       <div>
-        <Heading />
+        <Heading type="notice" />
         <p className="my-5 text-center">{documentTitle}</p>
         <div className="m-5">
           <p>
@@ -42,8 +35,8 @@ export default function NoticeOfMotion() {
       </div>
       <div className="pagebreak"></div>{" "}
       <div className="m-5">
-        <br></br> This Notice of Motion was issued by {solicitors}, [Solicitors'
-        Address], Solicitors for the Applicant.
+        <br></br> This Notice of Motion was issued by {solicitors},{" "}
+        {solicitorsAddress}, Solicitors for the Applicant.
         <div className="top-right">
           <p className="">{solicitors}</p>
           <p className=""> Solicitors for the Applicant</p>
@@ -75,6 +68,7 @@ export default function NoticeOfMotion() {
             </div>
           </div>
         </div>
+        <div className="pagebreak"></div>
         <Backsheet documentTitle={documentTitle} />
       </div>
     </div>

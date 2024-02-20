@@ -1,14 +1,47 @@
 import { useAppContext } from "../Context.js";
 import { Tab } from "./Tab.js";
 
-export default function Heading() {
+export default function Heading({ type, deponent }) {
   const { applicant, year } = useAppContext();
   return (
     <div className="justify-btween m-5 flex flex-col">
-      <div className="text-right">
-        <p>
-          HCA <Tab />/{year}
-        </p>
+      <div>
+        {type === "affirmation" && (
+          <>
+            <div className="flex justify-between">
+              <span>For filing</span>
+              <div>
+                <p>
+                  Applicant:{deponent}:1st:
+                  <Tab />
+                </p>
+                <p>
+                  HCMP <Tab />/{year}
+                </p>
+              </div>
+            </div>
+          </>
+        )}
+        {type === "notice" && (
+          <>
+            <div className="flex justify-between">
+              <div className="text-left">
+                <div className="border border-black"> Claim nature:</div>
+                <div className="border border-black">
+                  {" "}
+                  A. Non-monetary cliam only
+                </div>
+                <div className="border border-black">
+                  {" "}
+                  B. Profession (Barristers)
+                </div>
+              </div>
+              <div>
+                HCMP <Tab />/{year}
+              </div>
+            </div>
+          </>
+        )}
       </div>
       <div className="text-center">
         <p>IN THE HIGH COURT OF THE</p>
@@ -19,7 +52,7 @@ export default function Heading() {
         </p>
       </div>
       <div>
-        <div className="grid grid-cols-2 gap-4 my-5">
+        <div className="my-5 grid grid-cols-2 gap-4">
           <span></span>
           <div className="">
             <p className="">

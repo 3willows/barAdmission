@@ -1,29 +1,30 @@
-import { useAppContext } from "../Context.js"
-import Heading from "../components/CommonHeading.js"
-import Backsheet from "../components/Backsheet.js"
-import abbrev from "../helper/abbrev.js"
-import Jurat from "../components/Jurat.js"
+import { useAppContext } from "../Context.js";
+import Heading from "../components/CommonHeading.js";
+import Backsheet from "../components/Backsheet.js";
+import abbrev from "../helper/abbrev.js";
+import Jurat from "../components/Jurat.js";
+import ExhibitCoverPage from "../components/ExhibitCoverPage.js";
 
 export default function AffidavitOfApplicant() {
   const { applicantAffidavit, applicant, applicantAddress, certdate } =
-    useAppContext()
+    useAppContext();
 
-  const abbreviation = abbrev(applicant)
+  const abbreviation = abbrev(applicant);
 
   const documentTitle = `${
     applicantAffidavit ? "AFFIDAVIT" : "AFFIRMATION"
-  } OF ${applicant.toUpperCase()}`
+  } OF ${applicant.toUpperCase()}`;
 
   return (
     <div className="m-5">
-      <Heading />
+      <Heading type="affirmation" deponent={applicant}/>
       <p className="text-center">{documentTitle}</p>
       <p className="">
         I, {applicant} of {applicantAddress}, DO{" "}
         {applicantAffidavit ? "MAKE OATH" : "SOLEMNLY AFFIRM"} and say as
         follows:-
       </p>
-      <ol className="list-decimal m-5">
+      <ol className="m-5 list-decimal">
         <li>
           I am the Applicant in these proceedings. I make this Affidavit in
           support of my application to be admitted as a barrister under Section
@@ -39,9 +40,9 @@ export default function AffidavitOfApplicant() {
           I have completed at least 6 months of the period of approved pupillage
           specified in Section 10 of the Barristers (Qualification for Admission
           and Pupillage) Rules Cap. 159 sub. Leg AC. There is now produced and
-          shown to me marked {abbreviation}-1, a certified true copy of the
-          Certificate of Qualification for Admission dated {certdate} issued to
-          me by the Hong Kong Bar Association.{" "}
+          shown to me marked Exhibit {abbreviation}-1, a certified true copy of
+          the Certificate of Qualification for Admission dated {certdate} issued
+          to me by the Hong Kong Bar Association.{" "}
         </li>
         <li>
           I have been ordinarily resident in Hong Kong for at least 7 years.
@@ -54,7 +55,17 @@ export default function AffidavitOfApplicant() {
         </li>
       </ol>
       <Jurat affidavit={applicantAffidavit} />
+      <div className="pagebreak"></div>
+      <ExhibitCoverPage
+        documentTitle={documentTitle}
+        certdate={certdate}
+        description="Certified true copy of the
+          Certificate of Qualification for Admission"
+        abbreviation={abbreviation}
+        exhibitNumber={1}
+      />{" "}
+      <div className="pagebreak"></div>
       <Backsheet documentTitle={documentTitle} />
     </div>
-  )
+  );
 }
