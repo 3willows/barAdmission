@@ -1,11 +1,13 @@
 html {
-  height: 100%,
+  height: 100%;
+  color-scheme: dark light;
 }
 
 .pagebreak {
   border: solid;
   border-width: 5px;
-  border-color: #e8e6e3
+  line-height: normal;
+  border-color: #FFFF
 }
 
 @media print {

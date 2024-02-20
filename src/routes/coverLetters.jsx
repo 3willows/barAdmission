@@ -2,7 +2,7 @@ import { LetterBody } from "./letterBody.jsx";
 
 export default function CoverLetters() {
   return (
-    <div>
+    <div className="leading-relaxed">
       <div className="m-5">
         <div>
           <p>The Registrar</p>
@@ -34,7 +34,7 @@ export default function CoverLetters() {
         <p>18 Lower Albert Road</p>
         <LetterBody />
       </div>
-      
+
     </div>
   );
 }

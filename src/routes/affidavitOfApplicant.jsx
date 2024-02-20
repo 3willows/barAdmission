@@ -16,8 +16,8 @@ export default function AffidavitOfApplicant() {
   } OF ${applicant.toUpperCase()}`;
 
   return (
-    <div className="m-5 leading-relaxed">
-      <Heading type="affirmation" deponent={applicant}/>
+    <div className="m-5 flex flex-col gap-4 leading-relaxed">
+      <Heading type="affirmation" deponent={applicant} />
       <p className="text-center">{documentTitle}</p>
       <p className="">
         I, {applicant} of {applicantAddress}, DO{" "}
