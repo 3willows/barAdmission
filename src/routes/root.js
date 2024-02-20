@@ -14,11 +14,11 @@ const ComponentToPrint = React.forwardRef((props, ref) => {
   return (
     <div ref={ref}>
       <NoticeOfMotion />
-      <div className="pagebreak"></div>
+      <div className="break-after-auto"></div>
       <AffidavitOfApplicant />
-      <div className="pagebreak"></div>
+      <div className="break-after-auto"></div>
       <AffidavitOfIdentity />
-      <div className="pagebreak"></div>
+      <div className="break-after-auto"></div>
       <LettersTo3Regulators />
     </div>
   );
@@ -32,21 +32,21 @@ export default function Root() {
   });
 
   return (
-    <div className="text-lg min-h-100vh m-2 flex h-screen flex-col bg-slate-800 text-lg">
-      <header className="bg-slate-600">
-        <h1 className="sticky m-1 mt-2 text-center">
+    <div className="min-h-100vh m-2 flex h-screen flex-col bg-slate-800 text-lg">
+      <header className="">
+        <h1 className="sticky m-1 mt-2 text-center text-xl">
           Barrister Admission Bundle
         </h1>
-        <nav className="m-1 flex flex-row gap-x-1 bg-slate-600">
+        <nav className="m-1 grid grid-cols-4 justify-between gap-x-1 bg-slate-600">
           <button
-            className=" m-1 "
+            className="text-center"
             onClick={() => setPage((prev) => "Welcome")}
           >
             About
           </button>
           <select
             onChange={(e) => setPage((prev) => e.target.value)}
-            className=" m-1"
+            className="text-center"
           >
             <option value="Welcome">Documents</option>
             <option value="Notice">Notice of Motion</option>
@@ -54,8 +54,8 @@ export default function Root() {
             <option value="ID">Affirmation of Identity</option>
             <option value="Letters">Cover letter</option>
           </select>
-          <div className=" m-1">Technology</div>
-          <div className=" m-1">Philosophy</div>
+          <div className="text-center">Technology</div>
+          <div className="text-center">Philosophy</div>
         </nav>
       </header>
       <main>
