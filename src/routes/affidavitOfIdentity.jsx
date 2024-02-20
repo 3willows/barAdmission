@@ -21,10 +21,10 @@ export default function AffidavitOfIdentity() {
   } OF ${idDeponent.toUpperCase()}`;
 
   return (
-    <div className="m-5">
+    <div className="m-5 leading-relaxed	">
       <Heading type="affirmation" deponent={applicant}/>
       <p className="text-center">{documentTitle}</p>
-      <p className="">
+      <p>
         I, {idDeponent} of {idDeponentAddress}, solemnly, sincerely and truly
         declare and affirm as follows:
       </p>

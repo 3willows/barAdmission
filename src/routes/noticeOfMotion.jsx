@@ -9,7 +9,7 @@ export default function NoticeOfMotion() {
   const documentTitle = "NOTICE OF MOTION";
 
   return (
-    <div className="justify-btween m-5 flex flex-col">
+    <div className="justify-btween m-5 flex flex-col leading-relaxed">
       <div>
         <Heading type="notice" />
         <p className="my-5 text-center">{documentTitle}</p>

@@ -1,43 +1,13 @@
-import { useAppContext } from "../Context.js"
+import { useAppContext } from "../Context.js";
 
-export default function LettersTo3Regulators() {
-  return (
-    <div className="App">
-      <p>The Registrar</p>
-      <p>High Court</p>
-      <p>38 Queensway</p>
-      <p>Hong Kong</p>
-
-      <LetterBody />
-      <div className="pagebreak"></div>
-      <p>The Honorary Secretary</p>
-      <p>Hong Kong Bar Association</p>
-      <p>LG2, High Court</p>
-      <p>38 Queensway</p>
-      <p>Hong Kong</p>
-
-      <LetterBody />
-      <div className="pagebreak"></div>
-
-      <p> The Secretary for Justice</p>
-      <p>Department of Justice</p>
-      <p>6/F, Main and East Wings</p>
-      <p>Justice Place</p>
-      <p>18 Lower Albert Road</p>
-
-      <LetterBody />
-    </div>
-  )
-}
-
-function LetterBody() {
-  const { applicant, solicitors, mover } = useAppContext()
+export function LetterBody() {
+  const { applicant, solicitors, mover } = useAppContext();
 
   return (
-    <div>
-      <p>[date]</p>
+    <div className="leading-relaxed	">
+      <p className="text-right">[date]</p>
       <p>Dear Sirs,</p>
-      <div className="centre">
+      <div className="text-center">
         <p>
           <u>Re: Application of {applicant}</u> <u>for admission as</u>
         </p>
@@ -72,5 +42,5 @@ function LetterBody() {
       <p>Yours faithfully,</p>
       <p>{solicitors}</p>
     </div>
-  )
+  );
 }
