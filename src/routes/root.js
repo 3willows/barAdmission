@@ -37,16 +37,17 @@ export default function Root() {
         <h1 className="sticky m-1 mt-2 text-center text-xl">
           Barrister Admission Bundle
         </h1>
-        <nav className="m-1 grid grid-cols-3 justify-between gap-x-1 bg-slate-600 p-1">
+        <nav className="m-1 flex grid-cols-3 flex-col justify-between gap-x-1 bg-slate-600 p-1 md:grid">
+          {/*  */}{" "}
           <button
-            className="text-center"
+            className="border-2 border-white text-center md:border-0"
             onClick={() => setPage((prev) => "Welcome")}
           >
             About
           </button>
           <select
             onChange={(e) => setPage((prev) => e.target.value)}
-            className="bg-slate-600 text-center "
+            className="border-2 border-white bg-slate-600 text-center text-center md:border-0"
           >
             <option value="Info">Documents</option>
             <option value="Notice">Notice of Motion</option>
@@ -55,7 +56,7 @@ export default function Root() {
             <option value="Letters">Cover letters</option>
           </select>
           <button
-            className="text-center"
+            className="border-2 border-white text-center  md:border-0"
             onClick={() => setPage((prev) => "Philosophy")}
           >
             Philosophy
