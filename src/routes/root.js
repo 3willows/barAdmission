@@ -54,17 +54,32 @@ export default function Root() {
             <option value="ID">Affirmation of Identity</option>
             <option value="Letters">Cover letters</option>
           </select>
-          <div className="text-center">Source Code</div>
-          <div className="text-center">Philosophy</div>
+          <div className="text-center">
+            <a
+              href="https://github.com/3willows/barAdmission"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Source Code
+            </a>
+          </div>
+          <button
+            className="text-center"
+            onClick={() => setPage((prev) => "Philosophy")}
+          >
+            Philosophy
+          </button>
         </nav>
       </header>
       <main>
+        {page === "Welcome" && <WelcomePage setPage={setPage} />}
+        {page === "Info" && <InfoPage />}
+        {page === "Philosophy" && <PhilosophyPage />}
+
         {page === "Notice" && <NoticeOfMotion />}
         {page === "Applicant" && <AffidavitOfApplicant />}
         {page === "ID" && <AffidavitOfIdentity />}
         {page === "Letters" && <CoverLetters />}
-        {page === "Welcome" && <WelcomePage setPage={setPage} />}
-        {page === "Info" && <InfoPage />}
         <div className="hidden">
           <ComponentToPrint ref={componentRef} />
         </div>
@@ -77,6 +92,49 @@ export default function Root() {
       <footer className="mt-auto  bg-slate-600 text-center">
         <p className="">Creative Commons Licence</p>
       </footer>
+    </div>
+  );
+}
+
+function PhilosophyPage() {
+  return (
+    <div>
+      <article className="m-5">
+        <ol className="leading-leisure m-5 flex list-decimal flex-col gap-3">
+          <li>
+            <p>
+              My long term ambition is to make a website that takes the user
+              through the steps of a Hong Kong litigation, giving her the basic,
+              boilerplate advice about how much time it will take, how eventual
+              judgments can be enforced etc.
+            </p>
+          </li>
+          <li>
+            <p>
+              The aim is not to replace human expertise. But to let the lawyers
+              to focus on the tailor-made, often philosophical advice about the
+              costs and benefits of litigation.
+            </p>
+          </li>
+          <li>
+            <p>
+              Ideally, the litigant should have an intuitive understanding of
+              the process, what documents at each stage is going to look like,
+              helping the user place herself in the shoes of the Judge who needs
+              to decide all the issues. Only then is a truly informed decision
+              possible and the user fully able to appreciate the benefit of
+              legal advice.
+            </p>
+          </li>
+          <li>
+            <p>
+              But let’s see if future barristers find the information here
+              useful first! Feedback on user experience, design, or technical
+              matters are welcome.
+            </p>
+          </li>
+        </ol>
+      </article>
     </div>
   );
 }

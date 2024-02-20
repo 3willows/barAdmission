@@ -26,12 +26,12 @@ export default function Heading({ type, deponent }) {
           <>
             <div className="flex justify-between">
               <div className="text-left">
-                <div className="border border-black"> Claim nature:</div>
-                <div className="border border-black">
+                <div className="border border-white"> Claim nature:</div>
+                <div className="border border-white">
                   {" "}
                   A. Non-monetary cliam only
                 </div>
-                <div className="border border-black">
+                <div className="border border-white">
                   {" "}
                   B. Profession (Barristers)
                 </div>
