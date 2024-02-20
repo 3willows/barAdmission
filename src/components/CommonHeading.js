@@ -4,16 +4,16 @@ import { Tab } from "./Tab.js";
 export default function Heading({ type, deponent }) {
   const { applicant, year } = useAppContext();
   return (
-    <div className="justify-btween m-5 flex flex-col">
+    <div className="m-5 flex flex-col justify-between">
       <div>
         {type === "affirmation" && (
           <>
-            <div className="flex justify-between">
+            <div className="justify-between md:flex">
               <span>For filing</span>
               <div>
                 <p>
                   Applicant:{deponent}:1st:
-                  <Tab />
+                  <Tab/>
                 </p>
                 <p>
                   HCMP <Tab />/{year}
