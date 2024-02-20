@@ -2,7 +2,7 @@ import React from "react";
 
 export function WelcomePage({ setPage }) {
   return (
-    <div>
+    <div className="m-4">
       <article className="">
         <p className="py-4">
           This is a webpage designed to let you create all the necessary Court

@@ -32,7 +32,7 @@ export default function Root() {
   });
 
   return (
-    <div className="min-h-100vh m-2 flex h-screen flex-col bg-slate-800 font-serif text-lg leading-relaxed text-white	">
+    <div className="min-h-100vh text-normal m-2 flex h-screen flex-col bg-slate-800 font-serif leading-relaxed text-white md:text-lg">
       <header className="">
         <h1 className="sticky m-1 mt-2 text-center text-xl">
           Barrister Admission Bundle
@@ -47,7 +47,7 @@ export default function Root() {
           </button>
           <select
             onChange={(e) => setPage((prev) => e.target.value)}
-            className="border-2 border-white bg-slate-600 text-center text-center md:border-0"
+            className="border-2 border-white bg-slate-600 text-center md:border-0"
           >
             <option value="Info">Documents</option>
             <option value="Notice">Notice of Motion</option>
