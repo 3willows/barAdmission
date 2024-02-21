@@ -50,7 +50,7 @@ export default function Root() {
             onChange={(e) => setPage((prev) => e.target.value)}
             className="border-2 border-white bg-slate-600 text-center md:border-0"
           >
-            <option value="Info">View</option>
+            <option value="Info">Select Document</option>
             <option value="Notice">Notice of Motion</option>
             <option value="Applicant">Affirmation of the Applicant</option>
             <option value="ID">Affirmation of Identity</option>
