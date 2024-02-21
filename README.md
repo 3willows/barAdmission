@@ -1,6 +1,3 @@
-To add:
+Open issues:
 
-- [ ] Technology and Philosophy pages
-- [ ] Reponsive design
-- [ ] allow user to save answers
-- [ ] allow user to export answers already eneter
+- Consider strategy for testing the "print" function on the website for users on different computers.
