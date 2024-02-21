@@ -13,8 +13,14 @@ export function InfoPage() {
     }
   }
   return (
-    <div className="leading-relaxed	">
-      <h2 className="text-center">Enter information</h2>
+    <div className="leading-relaxed">
+      <h2 className="text-center">
+        Enter information{" "}
+        <span className="sm:hidden">and print all papers</span>
+      </h2>
+      <div className="text-center font-bold sm:hidden">
+        Only available on laptop/desktop.
+      </div>
       <article className="m-4 grid grid-cols-2 gap-4 sm:block">
         <div>
           <h3>The Applicant</h3>
@@ -63,11 +69,11 @@ export function InfoPage() {
             <DataInput prop="certdate" />
           </div>
         </div>
-        <p className="">
-          The year of application is fixed to this year, i.e.{" "}
-          {new Date().getFullYear()}.
-        </p>
       </article>
+      <p className="">
+        The year of application is fixed to this year, i.e.{" "}
+        {new Date().getFullYear()}.
+      </p>{" "}
     </div>
   );
 }

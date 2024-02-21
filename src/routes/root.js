@@ -83,9 +83,7 @@ export default function Root() {
           >
             Print
           </button>
-          <span onClick={handlePrint} className="font-bold sm:hidden">
-            Printing only available on laptop/desktop.
-          </span>
+   
         </article>
       </main>
       <footer className="mt-auto  bg-slate-600 text-center">
