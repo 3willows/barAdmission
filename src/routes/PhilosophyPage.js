@@ -7,42 +7,30 @@ export function PhilosophyPage() {
         <ol className="leading-leisure m-5 flex list-decimal flex-col gap-3">
           <li>
             <p>
-              My long term ambition is to make a website that takes the user
-              through the steps of a Hong Kong litigation, giving her the basic,
-              boilerplate advice about how much time it will take, how eventual
-              judgments can be enforced etc.
+              This is part of an ongoing project to provide basic, boilerplate,
+              information about Hong Kong litigation to the public.
             </p>
           </li>
           <li>
             <p>
-              The aim is not to replace human expertise. But to let the lawyers
-              to focus on the tailor-made, often philosophical advice about the
-              costs and benefits of litigation.
+              So that the public can come to an informed understanding of the value added by lawyers.
             </p>
           </li>
           <li>
             <p>
-              Ideally, the litigant should have an intuitive understanding of
-              the process. They should know in advance what the document
-              templates at each stage looks like, so that they fully understand
-              how much work lawyers put in to explain their story succiently to
-              a total stranger.
+              In an ideal world, everyone should have an intuitive
+              understanding of litigation the process.                Everyone should be able to put themselves in the shoes of the Judge, and have an intuitive feel for the kind of job the Court needs to do.
+
             </p>
           </li>
           <li>
             <p>
-              Even better, litigants should have sight of papers in a factually
-              contested case, so that she can place herself in the shoes of the
-              Judge, who has the difficult job of having to decide whose version
-              is true as best she can. Only then is a truly informed decision
-              possible and the user fully able to appreciate the benefit of
-              legal advice.
+              Otherwise it is hard to see how informed public discussion about Law and the courts is possible.
             </p>
           </li>
           <li>
             <p>
-              But let’s see if future barristers find the information here
-              useful first! Feedback on user experience, design, or the{" "}
+              Feedback on user experience, design, or the{" "}
               <u>
                 <a
                   href="https://github.com/3willows/barAdmission"

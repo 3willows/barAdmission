@@ -50,7 +50,7 @@ export default function Root() {
             onChange={(e) => setPage((prev) => e.target.value)}
             className="border-2 border-white bg-slate-600 text-center md:border-0"
           >
-            <option value="Info">Documents</option>
+            <option value="Info">View</option>
             <option value="Notice">Notice of Motion</option>
             <option value="Applicant">Affirmation of the Applicant</option>
             <option value="ID">Affirmation of Identity</option>
@@ -77,9 +77,15 @@ export default function Root() {
           <ComponentToPrint ref={componentRef} />
         </div>
         <article className="m-1 text-center">
-          <button onClick={handlePrint} className="m-2 bg-slate-600 p-2">
-            Print {page === "Info" ? `Bundle` : `Sample`}
-          </button>{" "}
+          <button
+            onClick={handlePrint}
+            className="m-2 hidden w-40 bg-slate-600 p-1 sm:inline-block "
+          >
+            Print
+          </button>
+          <span onClick={handlePrint} className="font-bold sm:hidden">
+            Printing only available on laptop/desktop.
+          </span>
         </article>
       </main>
       <footer className="mt-auto  bg-slate-600 text-center">
