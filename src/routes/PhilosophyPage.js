@@ -13,19 +13,13 @@ export function PhilosophyPage() {
           </li>
           <li>
             <p>
-              So that the public can come to an informed understanding of the value added by lawyers.
-            </p>
-          </li>
-          <li>
-            <p>
               In an ideal world, everyone should have an intuitive
-              understanding of litigation the process.                Everyone should be able to put themselves in the shoes of the Judge, and have an intuitive feel for the kind of job the Court needs to do.
-
+              understanding of litigation the process.                Everyone should be able to put themselves in the shoes of the Judge, and have a feel for the kind of job the Court needs to do.
             </p>
           </li>
           <li>
             <p>
-              Otherwise it is hard to see how informed public discussion about Law and the courts is possible.
+              This will help the public appreciate the value added by lawyers, and  inform discussions about the place of law in a civilised society.
             </p>
           </li>
           <li>
