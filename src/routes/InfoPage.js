@@ -46,12 +46,12 @@ export function InfoPage() {
           Enter information and print all papers
         </span>
       </h2>
-      <div className="text-center font-bold sm:hidden">
+      <div className="text-center italic sm:hidden">
         Only available on laptop/desktop.
       </div>
-      <article className="m-4 grid grid-cols-2 gap-4 sm:block">
+      <article className="md:grid m-4 grid-cols-2 gap-4 ">
         <div>
-          <h3>The Applicant</h3>
+          <h3 className=" my-1 uppercase">The Applicant</h3>
           <div className="grid grid-cols-2 gap-2">
             <span>Name</span>
             <DataInput prop="applicant" />
@@ -67,9 +67,9 @@ export function InfoPage() {
           </div>
         </div>
         <div>
-          <h3>The Solicitors</h3>
+          <h3 className="uppercase my-1">The Solicitors</h3>
           <div className="grid grid-cols-2 gap-2">
-            <span>Name </span>
+            <span> Name </span>
             <DataInput prop="solicitors" />
             <span>Solicitors' Address </span>
             <DataInput prop="solicitorsAddress" />
@@ -79,7 +79,7 @@ export function InfoPage() {
           </div>
         </div>
         <div className="">
-          <h3>Deponent on Identity</h3>
+          <h3 className="italic my-1">ID Deponent</h3>
           <div className="grid grid-cols-2 gap-2">
             <span>Name of Deponent </span> <DataInput prop="idDeponent" />
             Deponent Address <DataInput prop="idDeponentAddress" />
@@ -94,7 +94,7 @@ export function InfoPage() {
         </div>
 
         <div>
-          <h3>Other information</h3>
+          <h3 className="italic my-1">Other information</h3>
           <div className="grid grid-cols-2 gap-2">
             Mover <DataInput prop="mover" />
             Date of Certificate of Qualification for Admission{" "}
@@ -103,8 +103,7 @@ export function InfoPage() {
         </div>
       </article>
       <p className="">
-        The year of application is fixed to this year, i.e.{" "}
-        {year}.
+        The year of application is fixed to this year, i.e. {year}.
       </p>{" "}
       <div className="hidden">
         <ComponentToPrint ref={componentRef} />

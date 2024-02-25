@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 // import { Link } from "react-router-dom"
 
 // import { PhilosophyPage } from "./PhilosophyPage";
@@ -20,7 +20,7 @@ export default function Root() {
         <h1 className="sticky m-1 mt-2 text-center text-xl">
           Barrister Admission Bundle
         </h1>
-        <h2 className="sticky m-1 mt-2 text-center text-xl">(beta version)</h2>
+        <h2 className="sticky m-1 text-center text-xl">(beta version)</h2>
         <nav className="m-1 flex grid-cols-3 flex-col justify-between gap-x-1 bg-slate-600 p-1 md:grid">
           {/*  */}{" "}
           <button
