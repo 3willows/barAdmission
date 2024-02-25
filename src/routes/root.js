@@ -22,7 +22,6 @@ export default function Root() {
         </h1>
         <h2 className="sticky m-1 text-center text-xl">(beta version)</h2>
         <nav className="m-1 flex grid-cols-3 flex-col justify-between 
-        text-lg
         gap-x-1 bg-slate-600 p-1 md:grid">
           {/*  */}{" "}
           <button
