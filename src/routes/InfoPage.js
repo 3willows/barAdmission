@@ -83,7 +83,7 @@ export function InfoPage() {
           <h3>Deponent on Identity</h3>
           <div className="grid grid-cols-2 gap-2">
             <span>Name of Deponent </span> <DataInput prop="idDeponent" />
-            Deponent Address <DataInput prop="idDeponent" />
+            Deponent Address <DataInput prop="idDeponentAddress" />
             Affidavit?
             <input
               type="checkbox"

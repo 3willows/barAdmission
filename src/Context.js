@@ -12,7 +12,7 @@ const initialState = {
   idDeponentAddress: "ID DEPONENT ADDRESS",
   idAffidavit: false,
   mover: "[Pupil Master]",
-  certdate: "[certdate]",
+  certdate: "[Date]",
 }
 
 const Context = createContext()
@@ -63,6 +63,7 @@ const ContextProvider = ({ children }) => {
       solicitorsFax,
       idAffidavit,
       idDeponent,
+      idDeponentAddress,
       year,
       mover,
       certdate,
@@ -82,6 +83,7 @@ const ContextProvider = ({ children }) => {
         solicitorsFax,
         idAffidavit,
         idDeponent,
+        idDeponentAddress,
         year,
         mover,
         certdate,
