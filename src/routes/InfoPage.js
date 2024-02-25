@@ -41,12 +41,12 @@ export function InfoPage() {
     <div className="leading-relaxed">
       <h2 className="text-center">
         {/* Enter information{" "} */}
-        <span className="sm:hidden">
+        <span className="sm:hidden font-bold">
           {" "}
-          Enter information and print all papers
+          Enter information and print all papers.
         </span>
       </h2>
-      <div className="text-center bold sm:hidden">
+      <div className="text-center font-bold sm:hidden">
         Only available on laptop/desktop.
       </div>
       <article className="md:grid m-4 grid-cols-2 gap-4 ">
