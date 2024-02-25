@@ -46,7 +46,7 @@ export function InfoPage() {
           Enter information and print all papers
         </span>
       </h2>
-      <div className="text-center italic sm:hidden">
+      <div className="text-center bold sm:hidden">
         Only available on laptop/desktop.
       </div>
       <article className="md:grid m-4 grid-cols-2 gap-4 ">
@@ -79,7 +79,7 @@ export function InfoPage() {
           </div>
         </div>
         <div className="">
-          <h3 className="italic my-1">ID Deponent</h3>
+          <h3 className="uppercase my-1">ID Deponent</h3>
           <div className="grid grid-cols-2 gap-2">
             <span>Name of Deponent </span> <DataInput prop="idDeponent" />
             Deponent Address <DataInput prop="idDeponentAddress" />
@@ -94,7 +94,7 @@ export function InfoPage() {
         </div>
 
         <div>
-          <h3 className="italic my-1">Other information</h3>
+          <h3 className="uppercase my-1">Other information</h3>
           <div className="grid grid-cols-2 gap-2">
             Mover <DataInput prop="mover" />
             Date of Certificate of Qualification for Admission{" "}

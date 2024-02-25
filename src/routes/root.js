@@ -15,13 +15,15 @@ export default function Root() {
   const { applicantAffidavit, idAffidavit } = useAppContext();
 
   return (
-    <div className="min-h-100vh text-normal m-2 flex h-screen flex-col bg-slate-800 font-serif leading-relaxed text-white md:text-lg">
+    <div className="min-h-100vh text-normal my-2 flex h-screen flex-col bg-slate-800 font-serif leading-relaxed text-white md:text-lg">
       <header className="">
         <h1 className="sticky m-1 mt-2 text-center text-xl">
           Barrister Admission Bundle
         </h1>
         <h2 className="sticky m-1 text-center text-xl">(beta version)</h2>
-        <nav className="m-1 flex grid-cols-3 flex-col justify-between gap-x-1 bg-slate-600 p-1 md:grid">
+        <nav className="m-1 flex grid-cols-3 flex-col justify-between 
+        text-lg
+        gap-x-1 bg-slate-600 p-1 md:grid">
           {/*  */}{" "}
           <button
             className="border-2 border-white text-center md:border-0"
