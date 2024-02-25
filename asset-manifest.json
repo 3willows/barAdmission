@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/barAdmission/static/css/main.e7618322.css",
-    "main.js": "/barAdmission/static/js/main.542d5b15.js",
+    "main.js": "/barAdmission/static/js/main.a9eccb9d.js",
     "index.html": "/barAdmission/index.html",
     "main.e7618322.css.map": "/barAdmission/static/css/main.e7618322.css.map",
-    "main.542d5b15.js.map": "/barAdmission/static/js/main.542d5b15.js.map"
+    "main.a9eccb9d.js.map": "/barAdmission/static/js/main.a9eccb9d.js.map"
   },
   "entrypoints": [
     "static/css/main.e7618322.css",
-    "static/js/main.542d5b15.js"
+    "static/js/main.a9eccb9d.js"
   ]
 }
