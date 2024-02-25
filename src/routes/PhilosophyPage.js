@@ -27,19 +27,7 @@ export function PhilosophyPage() {
             </p>
           </li>
           <li>
-            <p>
-              Feedback on user experience, design, or the{" "}
-              <u>
-                <a
-                  href="https://github.com/3willows/barAdmission"
-                  target="blank"
-                  rel="noopener noreferrer"
-                >
-                  source code{" "}
-                </a>
-              </u>
-              are appreciated!
-            </p>
+            
           </li>
         </ol>
       </article>

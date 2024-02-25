@@ -1,10 +1,34 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useAppContext } from "../Context.js";
 import { DataInput } from "../components/DataInput";
-import { isFocusable } from "@testing-library/user-event/dist/utils/index.js";
+import { useReactToPrint } from "react-to-print";
+
+import AffidavitOfApplicant from "./affidavitOfApplicant";
+import AffidavitOfIdentity from "./affidavitOfIdentity";
+import NoticeOfMotion from "./noticeOfMotion";
+import CoverLetters from "./coverLetters";
+
+const ComponentToPrint = React.forwardRef((props, ref) => {
+  return (
+    <div ref={ref}>
+      <NoticeOfMotion />
+      <div className="pagebreak"></div>
+      <AffidavitOfApplicant />
+      <div className="pagebreak"></div>
+      <AffidavitOfIdentity />
+      <div className="pagebreak"></div>
+      <CoverLetters />
+    </div>
+  );
+});
+
 
 export function InfoPage() {
   const { dispatch, idAffidavit, applicantAffidavit } = useAppContext();
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
 
   function handleAffidavit(relevantAffidavit, e) {
     if (e.target.checked) {
@@ -13,11 +37,15 @@ export function InfoPage() {
       dispatch({ type: relevantAffidavit, payload: false });
     }
   }
+
   return (
     <div className="leading-relaxed">
       <h2 className="text-center">
-        Enter information{" "}
-        <span className="sm:hidden">and print all papers</span>
+        {/* Enter information{" "} */}
+        <span className="sm:hidden">
+          {" "}
+          Enter information and print all papers
+        </span>
       </h2>
       <div className="text-center font-bold sm:hidden">
         Only available on laptop/desktop.
@@ -64,6 +92,7 @@ export function InfoPage() {
             ></input>
           </div>
         </div>
+
         <div>
           <h3>Other information</h3>
           <div className="grid grid-cols-2 gap-2">
@@ -77,6 +106,18 @@ export function InfoPage() {
         The year of application is fixed to this year, i.e.{" "}
         {new Date().getFullYear()}.
       </p>{" "}
+      <div className="hidden">
+        <ComponentToPrint ref={componentRef} />
+      </div>
+      <article className="m-1 text-center">
+        <button
+          onClick={handlePrint}
+          className="m-2 hidden w-40 bg-slate-600 p-1 sm:inline-block "
+        >
+          Print
+        </button>
+      </article>
     </div>
   );
 }
+
