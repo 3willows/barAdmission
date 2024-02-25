@@ -12,7 +12,7 @@ import { useAppContext } from "../Context.js";
 
 export default function Root() {
   const [page, setPage] = useState("Welcome");
-  const { applicantAffidavit, idAffidavit } = useAppContext();
+  const { applicantAffidavit, idAffidavit, applicant, idDeponent } = useAppContext();
 
   return (
     <div className="min-h-100vh text-normal my-2 flex h-screen flex-col bg-slate-800 font-serif leading-relaxed text-white md:text-lg">
@@ -43,11 +43,10 @@ export default function Root() {
             <option value="Info">Select Document</option>
             <option value="Notice">Notice of Motion</option>
             <option value="Applicant">
-              {applicantAffidavit ? "Affidavit" : "Affirmation"} of the
-              Applicant
+              {applicantAffidavit ? "Affidavit" : "Affirmation"} of {applicant? applicant : "the Applicant"}
             </option>
             <option value="ID">
-              {idAffidavit ? "Affidavit" : "Affirmation"} of Identity
+              {idAffidavit ? "Affidavit" : "Affirmation"} of {idDeponent? idDeponent : "Identity"}
             </option>
             <option value="Letters">Cover letters</option>
           </select>
