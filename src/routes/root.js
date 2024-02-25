@@ -12,7 +12,8 @@ import { useAppContext } from "../Context.js";
 
 export default function Root() {
   const [page, setPage] = useState("Welcome");
-  const { applicantAffidavit, idAffidavit, applicant, idDeponent } = useAppContext();
+  const { applicantAffidavit, idAffidavit, applicant, idDeponent } =
+    useAppContext();
 
   return (
     <div className="min-h-100vh text-normal my-2 flex h-screen flex-col bg-slate-800 font-serif leading-relaxed text-white md:text-lg">
@@ -21,8 +22,10 @@ export default function Root() {
           Barrister Admission Bundle
         </h1>
         <h2 className="sticky m-1 text-center text-xl">(beta version)</h2>
-        <nav className="m-1 flex grid-cols-3 flex-col justify-between 
-        gap-x-1 bg-slate-600 p-1 md:grid">
+        <nav
+          className="m-1 flex grid-cols-3 flex-col justify-between 
+        gap-x-1 bg-slate-600 p-1 md:grid"
+        >
           {/*  */}{" "}
           <button
             className="border-2 border-white text-center md:border-0"
@@ -43,10 +46,12 @@ export default function Root() {
             <option value="Info">Select Document</option>
             <option value="Notice">Notice of Motion</option>
             <option value="Applicant">
-              {applicantAffidavit ? "Affidavit" : "Affirmation"} of {applicant? applicant : "the Applicant"}
+              {applicantAffidavit ? "Affidavit" : "Affirmation"} of{" "}
+              {applicant === "APPLICANT" ? "the Applicant" : applicant}
             </option>
             <option value="ID">
-              {idAffidavit ? "Affidavit" : "Affirmation"} of {idDeponent? idDeponent : "Identity"}
+              {idAffidavit ? "Affidavit" : "Affirmation"} of{" "}
+              {idDeponent === "ID DEPONENT" ? "Identity" : idDeponent}
             </option>
             <option value="Letters">Cover letters</option>
           </select>
