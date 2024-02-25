@@ -1,16 +1,20 @@
-import React from "react"
-import { useAppContext } from "../Context.js"
+import React from "react";
+import { useAppContext } from "../Context.js";
 
 export function DataInput({ prop }) {
-  const { dispatch } = useAppContext()
+  const Context = useAppContext();
+
+  const dispatch = Context.dispatch;
+
+  const value = Context[prop];
+
   return (
     <>
       <input
         type="text"
-        onChange={(e) =>
-          dispatch({ type: prop, payload: e.target.value })
-        }
+        value={value}
+        onChange={(e) => dispatch({ type: prop, payload: e.target.value })}
       ></input>
     </>
-  )
+  );
 }

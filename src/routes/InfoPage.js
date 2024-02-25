@@ -1,9 +1,10 @@
 import React from "react";
 import { useAppContext } from "../Context.js";
 import { DataInput } from "../components/DataInput";
+import { isFocusable } from "@testing-library/user-event/dist/utils/index.js";
 
 export function InfoPage() {
-  const { dispatch } = useAppContext();
+  const { dispatch, idAffidavit, applicantAffidavit } = useAppContext();
 
   function handleAffidavit(relevantAffidavit, e) {
     if (e.target.checked) {
@@ -32,6 +33,7 @@ export function InfoPage() {
             <span>Affidavit?</span>
             <input
               type="checkbox"
+              checked={applicantAffidavit}
               onChange={(e) => handleAffidavit("applicantAffidavit", e)}
               className="m-1"
             ></input>
@@ -57,6 +59,7 @@ export function InfoPage() {
             Affidavit?
             <input
               type="checkbox"
+              checked={idAffidavit}
               onChange={(e) => handleAffidavit("idAffidavit", e)}
             ></input>
           </div>
