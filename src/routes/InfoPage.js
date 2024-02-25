@@ -22,9 +22,8 @@ const ComponentToPrint = React.forwardRef((props, ref) => {
   );
 });
 
-
 export function InfoPage() {
-  const { dispatch, idAffidavit, applicantAffidavit } = useAppContext();
+  const { dispatch, idAffidavit, applicantAffidavit, year } = useAppContext();
   const componentRef = useRef();
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
@@ -61,9 +60,9 @@ export function InfoPage() {
             <span>Affidavit?</span>
             <input
               type="checkbox"
+              className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
               checked={applicantAffidavit}
               onChange={(e) => handleAffidavit("applicantAffidavit", e)}
-              className="m-1"
             ></input>
           </div>
         </div>
@@ -87,6 +86,7 @@ export function InfoPage() {
             Affidavit?
             <input
               type="checkbox"
+              className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
               checked={idAffidavit}
               onChange={(e) => handleAffidavit("idAffidavit", e)}
             ></input>
@@ -104,7 +104,7 @@ export function InfoPage() {
       </article>
       <p className="">
         The year of application is fixed to this year, i.e.{" "}
-        {new Date().getFullYear()}.
+        {year}.
       </p>{" "}
       <div className="hidden">
         <ComponentToPrint ref={componentRef} />
@@ -120,4 +120,3 @@ export function InfoPage() {
     </div>
   );
 }
-

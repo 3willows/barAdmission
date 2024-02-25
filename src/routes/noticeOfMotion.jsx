@@ -19,7 +19,7 @@ export default function NoticeOfMotion() {
             Administrative Region will be moved before the Honourable <Tab /> on{" "}
             <Tab />, <Tab />
             <Tab />, <Tab /> at <Tab /> or so soon thereafter as Counsel can be
-            heard on behalf of {applicant} the above-named Applicant for an
+            heard on behalf of {applicant.toUpperCase()}, the above-named Applicant, for an
             Order that the said {applicant} be admitted and enrolled as a
             Barrister of the High Court of the Hong Kong Special Administrative
             Region.

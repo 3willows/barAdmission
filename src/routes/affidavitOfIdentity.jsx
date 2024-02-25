@@ -22,7 +22,7 @@ export default function AffidavitOfIdentity() {
 
   return (
     <div className="m-5 leading-relaxed	">
-      <Heading type="affirmation" deponent={applicant}/>
+      <Heading type="affirmation" deponent={idDeponent}/>
       <p className="text-center">{documentTitle}</p>
       <p>
         I, {idDeponent} of {idDeponentAddress}, solemnly, sincerely and truly

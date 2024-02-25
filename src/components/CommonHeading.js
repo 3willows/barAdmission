@@ -12,8 +12,10 @@ export default function Heading({ type, deponent }) {
               <span>For filing</span>
               <div>
                 <p>
-                  Applicant:{deponent}:1st:
-                  <Tab/>
+                  Applicant:
+                  <Tab />
+                  <Tab />:{deponent}:1st:
+                  <Tab />
                 </p>
                 <p>
                   HCMP <Tab />/{year}
