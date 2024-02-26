@@ -1,7 +1,8 @@
-import { useAppContext } from "../Context.js";
+import { useAppContext } from "../context.js";
 
 export function LetterBody() {
-  const { applicant, solicitors, mover, idAffidavit, applicantAffidavit } = useAppContext();
+  const { applicant, solicitors, mover, idAffidavit, applicantAffidavit } =
+    useAppContext();
 
   return (
     <div className="leading-relaxed">
@@ -27,7 +28,10 @@ export function LetterBody() {
             <p>Notice of Motion;</p>
           </li>
           <li>
-            <p>{applicantAffidavit ? "Affidavit" : "Affirmation"} of {applicant}; and</p>
+            <p>
+              {applicantAffidavit ? "Affidavit" : "Affirmation"} of {applicant};
+              and
+            </p>
           </li>
           <li>
             <p>{idAffidavit ? "Affidavit" : "Affirmation"} of Identity.</p>

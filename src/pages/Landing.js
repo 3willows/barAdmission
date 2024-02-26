@@ -1,6 +1,6 @@
 import React from "react";
 
-export function WelcomePage({ setPage }) {
+export function Landing({ setPage }) {
   return (
     <div className="m-4">
       <article className="m-5 text-center">
@@ -10,14 +10,6 @@ export function WelcomePage({ setPage }) {
         <p className="m-5 text-center">
           For pupils seeking admission in {new Date().getFullYear()}.
         </p>
-        {/* <p className="m-1 text-center">
-          <button
-            onClick={() => setPage((prev) => "Info")}
-            className="m-2 w-40 bg-slate-600 p-1 sm:inline-block"
-          >
-            Enter Information
-          </button>
-        </p> */}
       </article>
     </div>
   );

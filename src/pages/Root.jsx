@@ -1,19 +1,19 @@
 import React, { useState } from "react";
-// import { Link } from "react-router-dom"
+import { InfoPage } from "./EnterInfo.jsx";
+import { Landing } from "./Landing";
+import { useAppContext } from "../context.js";
 
-// import { PhilosophyPage } from "./PhilosophyPage";
-import AffidavitOfApplicant from "./affidavitOfApplicant";
-import AffidavitOfIdentity from "./affidavitOfIdentity";
-import NoticeOfMotion from "./noticeOfMotion";
-import CoverLetters from "./coverLetters";
-import { InfoPage } from "./InfoPage.js";
-import { WelcomePage } from "./WelcomePage";
-import { useAppContext } from "../Context.js";
+import AffidavitOfApplicant from "./AffidavitOfApplicant";
+import AffidavitOfIdentity from "./AffidavitOfIdentity";
+import NoticeOfMotion from "./NoticeOfMotion";
+import CoverLetters from "./CoverLetters";
+
 
 export default function Root() {
-  const [page, setPage] = useState("Welcome");
   const { applicantAffidavit, idAffidavit, applicant, idDeponent } =
     useAppContext();
+
+  const [page, setPage] = useState("Welcome");
 
   return (
     <div className="min-h-100vh text-normal my-2 flex h-screen flex-col bg-slate-800 font-serif leading-relaxed text-white md:text-lg">
@@ -22,17 +22,15 @@ export default function Root() {
           Barrister Admission Bundle
         </h1>
         <h2 className="sticky m-1 text-center text-xl">(beta version)</h2>
-        <nav
-          className="m-1 flex grid-cols-3 flex-col justify-between 
+        <nav className="m-1 flex grid-cols-3 flex-col justify-between 
         gap-x-1 bg-slate-600 p-1 md:grid"
         >
-          {/*  */}{" "}
           <button
             className="border-2 border-white text-center md:border-0"
             onClick={() => setPage((prev) => "Welcome")}
           >
             About
-          </button>{" "}
+          </button>
           <button
             className="border-2 border-white text-center  md:border-0"
             onClick={() => setPage((prev) => "Info")}
@@ -58,10 +56,8 @@ export default function Root() {
         </nav>
       </header>
       <main>
-        {page === "Welcome" && <WelcomePage setPage={setPage} />}
+        {page === "Welcome" && <Landing setPage={setPage} />}
         {page === "Info" && <InfoPage />}
-        {/* {page === "Philosophy" && <PhilosophyPage />} */}
-
         {page === "Notice" && <NoticeOfMotion />}
         {page === "Applicant" && <AffidavitOfApplicant />}
         {page === "ID" && <AffidavitOfIdentity />}

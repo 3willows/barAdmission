@@ -1,4 +1,4 @@
-import { LetterBody } from "./letterBody.jsx";
+import { LetterBody } from "../components/LetterBody.jsx";
 
 export default function CoverLetters() {
   return (

@@ -1,7 +1,7 @@
-import { useAppContext } from "../Context.js";
+import { useAppContext } from "../context.js";
 import { Tab } from "../components/Tab.js";
-import Heading from "../components/CommonHeading.js";
-import Backsheet from "../components/Backsheet.js";
+import Heading from "../components/CommonHeading.jsx";
+import Backsheet from "../components/Backsheet.jsx";
 
 export default function NoticeOfMotion() {
   const { applicant, solicitors, solicitorsAddress, year } = useAppContext();
@@ -19,10 +19,10 @@ export default function NoticeOfMotion() {
             Administrative Region will be moved before the Honourable <Tab /> on{" "}
             <Tab />, <Tab />
             <Tab />, <Tab /> at <Tab /> or so soon thereafter as Counsel can be
-            heard on behalf of {applicant.toUpperCase()}, the above-named Applicant, for an
-            Order that the said {applicant} be admitted and enrolled as a
-            Barrister of the High Court of the Hong Kong Special Administrative
-            Region.
+            heard on behalf of {applicant.toUpperCase()}, the above-named
+            Applicant, for an Order that the said {applicant} be admitted and
+            enrolled as a Barrister of the High Court of the Hong Kong Special
+            Administrative Region.
           </p>
         </div>
         <div className="m-5">

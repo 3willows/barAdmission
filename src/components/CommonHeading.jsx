@@ -1,4 +1,4 @@
-import { useAppContext } from "../Context.js";
+import { useAppContext } from "../context.js";
 import { Tab } from "./Tab.js";
 
 export default function Heading({ type, deponent }) {

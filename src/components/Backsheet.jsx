@@ -1,4 +1,4 @@
-import { useAppContext } from "../Context.js";
+import { useAppContext } from "../context.js";
 import { Tab } from "./Tab.js";
 
 export default function Backsheet({ documentTitle }) {
@@ -55,11 +55,9 @@ export default function Backsheet({ documentTitle }) {
             <span></span>
           </div>
 
-          <div className="text-center mt-auto">
+          <div className="mt-auto text-center">
             <p>{solicitors}</p>
-            <p>
-              Solicitors for the Applicant
-            </p>
+            <p>Solicitors for the Applicant</p>
             <p>{solicitorsAddress}</p>
             <p>Tel: {solicitorsPhone}</p>
             <p>Fax: {solicitorsFax}</p>

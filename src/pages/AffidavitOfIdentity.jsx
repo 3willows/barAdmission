@@ -1,10 +1,10 @@
-import { useAppContext } from "../Context.js";
-import Heading from "../components/CommonHeading.js";
+import { useAppContext } from "../context.js";
 import { Tab } from "../components/Tab.js";
+import Heading from "../components/CommonHeading.jsx";
+import Backsheet from "../components/Backsheet.jsx";
 import abbrev from "../helper/abbrev.js";
-import Backsheet from "../components/Backsheet.js";
-import Jurat from "../components/Jurat.js";
-import ExhibitCoverPage from "../components/ExhibitCoverPage.js";
+import Jurat from "../components/Jurat.jsx";
+import ExhibitCoverPage from "../components/ExhibitCoverPage.jsx";
 
 export default function AffidavitOfIdentity() {
   const {
@@ -22,7 +22,7 @@ export default function AffidavitOfIdentity() {
 
   return (
     <div className="m-5 leading-relaxed	">
-      <Heading type="affirmation" deponent={idDeponent}/>
+      <Heading type="affirmation" deponent={idDeponent} />
       <p className="text-center">{documentTitle}</p>
       <p>
         I, {idDeponent} of {idDeponentAddress}, solemnly, sincerely and truly

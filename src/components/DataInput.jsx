@@ -1,5 +1,5 @@
 import React from "react";
-import { useAppContext } from "../Context.js";
+import { useAppContext } from "../context.js";
 
 export function DataInput({ prop }) {
   const Context = useAppContext();
@@ -12,7 +12,7 @@ export function DataInput({ prop }) {
     <>
       <input
         type="text"
-        className="text-black bg-white dark:text-white dark:bg-black"
+        className="bg-white text-black dark:bg-black dark:text-white"
         value={value}
         onChange={(e) => dispatch({ type: prop, payload: e.target.value })}
       ></input>

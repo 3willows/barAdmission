@@ -1,12 +1,12 @@
 import React, { useRef } from "react";
-import { useAppContext } from "../Context.js";
-import { DataInput } from "../components/DataInput";
+import { useAppContext } from "../context.js";
+import { DataInput } from "../components/DataInput.jsx";
 import { useReactToPrint } from "react-to-print";
 
-import AffidavitOfApplicant from "./affidavitOfApplicant";
-import AffidavitOfIdentity from "./affidavitOfIdentity";
-import NoticeOfMotion from "./noticeOfMotion";
-import CoverLetters from "./coverLetters";
+import AffidavitOfApplicant from "./AffidavitOfApplicant.jsx";
+import AffidavitOfIdentity from "./AffidavitOfIdentity.jsx";
+import NoticeOfMotion from "./NoticeOfMotion.jsx";
+import CoverLetters from "./CoverLetters.jsx";
 
 const ComponentToPrint = React.forwardRef((props, ref) => {
   return (
@@ -25,10 +25,10 @@ const ComponentToPrint = React.forwardRef((props, ref) => {
 export function InfoPage() {
   const { dispatch, idAffidavit, applicantAffidavit, year } = useAppContext();
   const componentRef = useRef();
+
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
-
   function handleAffidavit(relevantAffidavit, e) {
     if (e.target.checked) {
       dispatch({ type: relevantAffidavit, payload: true });
@@ -40,16 +40,14 @@ export function InfoPage() {
   return (
     <div className="leading-relaxed">
       <h2 className="text-center">
-        {/* Enter information{" "} */}
-        <span className="sm:hidden font-bold">
-          {" "}
+        <span className="font-bold sm:hidden">
           Enter information and print all papers.
         </span>
       </h2>
       <div className="text-center font-bold sm:hidden">
         Only available on laptop/desktop.
       </div>
-      <article className="md:grid m-4 grid-cols-2 gap-4 ">
+      <article className="m-4 grid-cols-2 gap-4 md:grid ">
         <div>
           <h3 className=" my-1 uppercase">The Applicant</h3>
           <div className="grid grid-cols-2 gap-2">
@@ -67,7 +65,7 @@ export function InfoPage() {
           </div>
         </div>
         <div>
-          <h3 className="uppercase my-1">The Solicitors</h3>
+          <h3 className="my-1 uppercase">The Solicitors</h3>
           <div className="grid grid-cols-2 gap-2">
             <span> Name </span>
             <DataInput prop="solicitors" />
@@ -79,7 +77,7 @@ export function InfoPage() {
           </div>
         </div>
         <div className="">
-          <h3 className="uppercase my-1">ID Deponent</h3>
+          <h3 className="my-1 uppercase">ID Deponent</h3>
           <div className="grid grid-cols-2 gap-2">
             <span>Name of Deponent </span> <DataInput prop="idDeponent" />
             Deponent Address <DataInput prop="idDeponentAddress" />
@@ -94,17 +92,17 @@ export function InfoPage() {
         </div>
 
         <div>
-          <h3 className="uppercase my-1">Other information</h3>
+          <h3 className="my-1 uppercase">Other information</h3>
           <div className="grid grid-cols-2 gap-2">
             Mover <DataInput prop="mover" />
-            Date of Certificate of Qualification for Admission{" "}
+            Date of Certificate of Qualification for Admission
             <DataInput prop="certdate" />
           </div>
         </div>
       </article>
       <p className="">
         The year of application is fixed to this year, i.e. {year}.
-      </p>{" "}
+      </p>
       <div className="hidden">
         <ComponentToPrint ref={componentRef} />
       </div>
