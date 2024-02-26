@@ -12,7 +12,7 @@ export function DataInput({ prop }) {
     <>
       <input
         type="text"
-        className="text-black dark:text-white"
+        className="text-black bg-white dark:text-white dark:bg-black"
         value={value}
         onChange={(e) => dispatch({ type: prop, payload: e.target.value })}
       ></input>
