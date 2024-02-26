@@ -103,6 +103,9 @@ export function InfoPage() {
       <p className="">
         The year of application is fixed to this year, i.e. {year}.
       </p>
+      <p className="hidden sm:block">
+      Printing only available on laptop/desktop.
+      </p>
       <div className="hidden">
         <ComponentToPrint ref={componentRef} />
       </div>
