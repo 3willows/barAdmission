@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html {
   height: 100%;
   color-scheme: dark light;
@@ -7,16 +11,12 @@ html {
   border: solid;
   border-width: 5px;
   line-height: normal;
-  border-color: #FFFF
+  border-color:#475569
 }
-
 
 @media print {
   .pagebreak {
     page-break-before: always;
+    border-color: white
   }
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;

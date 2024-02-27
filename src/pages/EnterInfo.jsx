@@ -121,7 +121,7 @@ export function InfoPage() {
       <article className="m-1 text-center">
         <button
           onClick={handlePrint}
-          className="m-2 hidden w-40 bg-slate-600 p-1 sm:inline-block "
+          className="m-2 hidden w-40 text-white bg-slate-600 p-1 sm:inline-block "
         >
           Print
         </button>

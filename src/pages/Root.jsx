@@ -16,14 +16,14 @@ export default function Root() {
   const [page, setPage] = useState("Welcome");
 
   return (
-    <div className="min-h-100vh text-normal my-2 flex h-screen flex-col bg-slate-800 font-serif leading-relaxed text-white md:text-lg">
-      <header className="">
+    <div className="min-h-100vh text-normal my-2 flex h-screen flex-col bg-slate-100 font-serif leading-relaxed text-black md:text-lg">
+      <header className="bg-slate-600 text-white">
         <h1 className="sticky m-1 mt-2 text-center text-xl">
         Barrister Admission Bundle
         </h1>
         <h2 className="sticky m-1 text-center text-xl">(beta version)</h2>
         <nav className="m-1 flex grid-cols-3 flex-col justify-between 
-        gap-x-1 bg-slate-600 p-1 md:grid"
+        gap-x-1 bg-slate-600 text-white p-1 md:grid"
         >
           <button
             className="border-2 border-white text-center md:border-0"
@@ -63,7 +63,7 @@ export default function Root() {
         {page === "ID" && <AffidavitOfIdentity />}
         {page === "Letters" && <CoverLetters />}
       </main>
-      <footer className="mt-auto  bg-slate-600 text-center">
+      <footer className="mt-auto text-white bg-slate-600 text-center">
         <p className="">MIT License</p>
       </footer>
     </div>
