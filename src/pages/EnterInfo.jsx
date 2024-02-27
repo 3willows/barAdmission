@@ -47,11 +47,11 @@ export function InfoPage() {
     <div className="leading-relaxed">
       <h2 className="text-center">
         <span className="font-bold sm:hidden">
-          Enter information and print all papers.
+          Changes are immediately reflected in the "Select Document" Tab.{" "}
         </span>
       </h2>
       <div className="text-center font-bold sm:hidden">
-        Only available on laptop/desktop.
+        Printing only available on laptop/desktop.
       </div>
       <article className="m-4 grid-cols-2 gap-4 md:grid ">
         <div>
@@ -107,9 +107,7 @@ export function InfoPage() {
         </div>
       </article>
       <div className="m-4">
-        <p>
-          The year of application is fixed to this year, i.e. {year}.
-        </p>
+        <p>The year of application is fixed to this year, i.e. {year}.</p>
         <p className="hidden sm:block">
           Printing only available on laptop/desktop. (Not available on Firefox
           Android)
@@ -121,7 +119,7 @@ export function InfoPage() {
       <article className="m-1 text-center">
         <button
           onClick={handlePrint}
-          className="m-2 hidden w-40 text-white bg-slate-600 p-1 sm:inline-block "
+          className="m-2 hidden w-40 bg-slate-600 p-1 text-white sm:inline-block "
         >
           Print
         </button>
