@@ -1,5 +1,4 @@
-import { useAppContext } from "../context.js";
-import Heading from "../components/CommonHeading.jsx";
+import { useAppContext } from "../context.jsx";import Heading from "../components/CommonHeading.jsx";
 import Backsheet from "../components/Backsheet.jsx";
 import abbrev from "../helper/abbrev.js";
 import Jurat from "../components/Jurat.jsx";

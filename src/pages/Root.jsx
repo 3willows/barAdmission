@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { InfoPage } from "./EnterInfo.jsx";
 import { Landing } from "./Landing";
-import { useAppContext } from "../context.js";
+import { useAppContext } from "../context.jsx";
 
 import AffidavitOfApplicant from "./AffidavitOfApplicant";
 import AffidavitOfIdentity from "./AffidavitOfIdentity";
@@ -19,7 +19,7 @@ export default function Root() {
     <div className="min-h-100vh text-normal my-2 flex h-screen flex-col bg-slate-800 font-serif leading-relaxed text-white md:text-lg">
       <header className="">
         <h1 className="sticky m-1 mt-2 text-center text-xl">
-          Barrister Admission Bundle
+        Barrister Admission Bundle
         </h1>
         <h2 className="sticky m-1 text-center text-xl">(beta version)</h2>
         <nav className="m-1 flex grid-cols-3 flex-col justify-between 

@@ -1,5 +1,5 @@
 import React from "react";
-import { useAppContext } from "../context.js";
+import { useAppContext } from "../context.jsx";
 
 export function DataInput({ prop }) {
   const Context = useAppContext();

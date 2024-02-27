@@ -1,5 +1,5 @@
-import { useAppContext } from "../context.js";
-import { Tab } from "./Tab.js";
+import { useAppContext } from "../context.jsx";
+import { Tab } from "./Tab.jsx";
 
 export default function Heading({ type, deponent }) {
   const { applicant, year } = useAppContext();

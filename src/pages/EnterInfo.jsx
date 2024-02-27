@@ -1,16 +1,22 @@
-import React, { useRef } from "react";
-import { useAppContext } from "../context.js";
-import { DataInput } from "../components/DataInput.jsx";
-import { useReactToPrint } from "react-to-print";
+import React, { useRef } from "react"
+import { useAppContext } from "../context.jsx"
+import { DataInput } from "../components/DataInput.jsx"
+import { useReactToPrint } from "react-to-print"
 
-import AffidavitOfApplicant from "./AffidavitOfApplicant.jsx";
-import AffidavitOfIdentity from "./AffidavitOfIdentity.jsx";
-import NoticeOfMotion from "./NoticeOfMotion.jsx";
-import CoverLetters from "./CoverLetters.jsx";
+import AffidavitOfApplicant from "./AffidavitOfApplicant.jsx"
+import AffidavitOfIdentity from "./AffidavitOfIdentity.jsx"
+import NoticeOfMotion from "./NoticeOfMotion.jsx"
+import CoverLetters from "./CoverLetters.jsx"
+
+const getPageMargins = () => {
+  return `@page { margin: 3% !important}`
+}
+
 
 const ComponentToPrint = React.forwardRef((props, ref) => {
   return (
     <div ref={ref}>
+      <style>{getPageMargins()}</style>
       <NoticeOfMotion />
       <div className="pagebreak"></div>
       <AffidavitOfApplicant />
@@ -19,21 +25,22 @@ const ComponentToPrint = React.forwardRef((props, ref) => {
       <div className="pagebreak"></div>
       <CoverLetters />
     </div>
-  );
-});
+  )
+})
 
 export function InfoPage() {
-  const { dispatch, idAffidavit, applicantAffidavit, year } = useAppContext();
-  const componentRef = useRef();
+  const { dispatch, idAffidavit, applicantAffidavit, year } = useAppContext()
+  const componentRef = useRef()
 
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
-  });
+  })
+
   function handleAffidavit(relevantAffidavit, e) {
     if (e.target.checked) {
-      dispatch({ type: relevantAffidavit, payload: true });
+      dispatch({ type: relevantAffidavit, payload: true })
     } else {
-      dispatch({ type: relevantAffidavit, payload: false });
+      dispatch({ type: relevantAffidavit, payload: false })
     }
   }
 
@@ -104,7 +111,8 @@ export function InfoPage() {
         The year of application is fixed to this year, i.e. {year}.
       </p>
       <p className="hidden sm:block">
-      Printing only available on laptop/desktop.
+        Printing only available on laptop/desktop. (Not available on Firefox
+        Android)
       </p>
       <div className="hidden">
         <ComponentToPrint ref={componentRef} />
@@ -118,5 +126,5 @@ export function InfoPage() {
         </button>
       </article>
     </div>
-  );
+  )
 }

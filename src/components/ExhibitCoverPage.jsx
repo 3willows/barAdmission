@@ -1,5 +1,5 @@
-import { useAppContext } from "../context.js";
-import { Tab } from "./Tab.js";
+import { useAppContext } from "../context.jsx";
+import { Tab } from "./Tab.jsx";
 
 export default function ExhibitCoverPage({
   documentTitle,
@@ -40,7 +40,7 @@ export default function ExhibitCoverPage({
             </p>
           </div>
         </div>
-        <p className="mb-5 mt-5 text-center">
+        <div className="mb-5 mt-5 text-center">
           <p>
             THIS IS EXHIBIT {abbreviation}-{exhibitNumber} REFERRED TO
           </p>
@@ -48,7 +48,7 @@ export default function ExhibitCoverPage({
           <p>
             AFFIRMED ON THE {Tab} DAY OF {year}
           </p>
-        </p>
+        </div>
       </div>
       <div className="">
         <div className="grid grid-cols-4 gap-4">

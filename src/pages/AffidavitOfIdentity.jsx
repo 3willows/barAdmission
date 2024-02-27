@@ -1,5 +1,4 @@
-import { useAppContext } from "../context.js";
-import { Tab } from "../components/Tab.js";
+import { useAppContext } from "../context.jsx";import { Tab } from "../components/Tab.jsx";
 import Heading from "../components/CommonHeading.jsx";
 import Backsheet from "../components/Backsheet.jsx";
 import abbrev from "../helper/abbrev.js";

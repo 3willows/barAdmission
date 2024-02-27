@@ -1,5 +1,5 @@
-import { useAppContext } from "../context.js";
-import { Tab } from "./Tab.js";
+import { useAppContext } from "../context.jsx";
+import { Tab } from "./Tab.jsx";
 
 export default function Backsheet({ documentTitle }) {
   const {
