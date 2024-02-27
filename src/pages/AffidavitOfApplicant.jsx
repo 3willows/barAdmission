@@ -48,6 +48,7 @@ export default function AffidavitOfApplicant() {
           I have been ordinarily resident in Hong Kong for at least 7 years.
         </li>
         <div style={{ pageBreakBefore: "always" }}></div>
+        {/* observe the jurat rule */}
         <li>
           I verily believe that I have satisfied the requirements of Section 27
           of the Legal Practitioners Ordinance, Cap. 159 and humbly pray that
