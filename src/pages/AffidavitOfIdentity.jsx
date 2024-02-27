@@ -1,4 +1,5 @@
-import { useAppContext } from "../context.jsx";import { Tab } from "../components/Tab.jsx";
+import { useAppContext } from "../context.jsx";
+import { Tab } from "../components/Tab.jsx";
 import Heading from "../components/CommonHeading.jsx";
 import Backsheet from "../components/Backsheet.jsx";
 import abbrev from "../helper/abbrev.js";
@@ -41,6 +42,7 @@ export default function AffidavitOfIdentity() {
       <Jurat affidavit={idAffidavit} />
       <div className="pagebreak"></div>
       <ExhibitCoverPage
+        documentTitle={documentTitle}
         description={`Photograph of ${applicant}`}
         abbreviation={abbreviation}
         exhibitNumber={1}

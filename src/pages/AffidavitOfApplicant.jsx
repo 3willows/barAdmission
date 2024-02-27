@@ -1,4 +1,5 @@
-import { useAppContext } from "../context.jsx";import Heading from "../components/CommonHeading.jsx";
+import { useAppContext } from "../context.jsx";
+import Heading from "../components/CommonHeading.jsx";
 import Backsheet from "../components/Backsheet.jsx";
 import abbrev from "../helper/abbrev.js";
 import Jurat from "../components/Jurat.jsx";
@@ -15,7 +16,7 @@ export default function AffidavitOfApplicant() {
   } OF ${applicant.toUpperCase()}`;
 
   return (
-    <div className="m-5 flex flex-col gap-4 leading-relaxed">
+    <div className="m-5 leading-relaxed">
       <Heading type="affirmation" deponent={applicant} />
       <p className="text-center">{documentTitle}</p>
       <p className="">
@@ -46,6 +47,7 @@ export default function AffidavitOfApplicant() {
         <li>
           I have been ordinarily resident in Hong Kong for at least 7 years.
         </li>
+        <div style={{ pageBreakBefore: "always" }}></div>
         <li>
           I verily believe that I have satisfied the requirements of Section 27
           of the Legal Practitioners Ordinance, Cap. 159 and humbly pray that
@@ -62,7 +64,7 @@ export default function AffidavitOfApplicant() {
           Certificate of Qualification for Admission"
         abbreviation={abbreviation}
         exhibitNumber={1}
-      />
+      />{" "}
       <div className="pagebreak"></div>
       <Backsheet documentTitle={documentTitle} />
     </div>
