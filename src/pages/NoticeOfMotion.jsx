@@ -9,7 +9,7 @@ export default function NoticeOfMotion() {
   const documentTitle = "NOTICE OF MOTION";
 
   return (
-    <div className="justify-btween m-5 flex flex-col leading-relaxed">
+    <div className="m-5 leading-relaxed">
       <div>
         <Heading type="notice" />
         <p className="my-5 text-center">{documentTitle}</p>
@@ -34,10 +34,10 @@ export default function NoticeOfMotion() {
         </div>
       </div>
       <div className="pagebreak"></div>{" "}
-      <div className="m-5">
+      <div className="mx-5">
         <br></br> This Notice of Motion was issued by {solicitors},{" "}
         {solicitorsAddress}, Solicitors for the Applicant.
-        <div className="top-right">
+        <div className="text-right">
           <p className="">{solicitors}</p>
           <p className=""> Solicitors for the Applicant</p>
         </div>

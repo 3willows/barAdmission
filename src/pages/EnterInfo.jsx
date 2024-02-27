@@ -9,7 +9,7 @@ import NoticeOfMotion from "./NoticeOfMotion.jsx";
 import CoverLetters from "./CoverLetters.jsx";
 
 const getPageMargins = () => {
-  return `@page { margin: 3% !important}`;
+  return `@page { margin: 5% !important}`;
 };
 
 const ComponentToPrint = React.forwardRef((props, ref) => {
