@@ -28,7 +28,7 @@ const ComponentToPrint = React.forwardRef((props, ref) => {
 });
 
 export function InfoPage() {
-  const { dispatch, idAffidavit, applicantAffidavit, year } = useAppContext();
+  const { dispatch, idAffidavit, applicantAffidavit } = useAppContext();
   const componentRef = useRef();
 
   const handlePrint = useReactToPrint({
@@ -107,7 +107,7 @@ export function InfoPage() {
         </div>
       </article>
       <div className="m-4">
-        <p>The year of application is fixed to this year, i.e. {year}.</p>
+      <p className="hidden sm:block"> Changes are immediately reflected in the "Select Document" Tab.</p>
         <p className="hidden sm:block">
           Printing only available on laptop/desktop. (Not available on Firefox
           Android)
