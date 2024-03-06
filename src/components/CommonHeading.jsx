@@ -13,8 +13,7 @@ export default function Heading({ type, deponent }) {
               <div>
                 <p>
                   Applicant:
-                  <Tab />
-                  <Tab />:{deponent}:1st:
+                  {deponent}:1st:
                   <Tab />
                 </p>
                 <p>
