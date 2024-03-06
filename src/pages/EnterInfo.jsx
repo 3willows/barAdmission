@@ -27,7 +27,7 @@ const ComponentToPrint = React.forwardRef((props, ref) => {
   );
 });
 
-export function InfoPage() {
+export default function EnterInfo() {
   const { dispatch, idAffidavit, applicantAffidavit } = useAppContext();
   const componentRef = useRef();
 
