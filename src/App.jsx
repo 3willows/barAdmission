@@ -1,16 +1,15 @@
 import React from "react";
+import { Routes, Route, HashRouter } from "react-router-dom";
 
+import Wrapper from "./pages/Wrapper";
+
+import  Landing  from "./pages/Landing";
 import EnterInfo from "./pages/EnterInfo.jsx";
 import AffidavitOfApplicant from "./pages/AffidavitOfApplicant";
 import AffidavitOfIdentity from "./pages/AffidavitOfIdentity";
 import NoticeOfMotion from "./pages/NoticeOfMotion";
 import CoverLetters from "./pages/CoverLetters";
-
-import { Routes, Route, HashRouter } from "react-router-dom";
-import Wrapper from "./pages/Wrapper";
-import { Landing } from "./pages/Landing";
-
-// The Routes are ultimately abandoned, save for the Root.
+import ErrorPage from "./pages/ErrorPage";
 
 export default function App() {
   return (
@@ -23,6 +22,7 @@ export default function App() {
           <Route path="applicant" element={<AffidavitOfApplicant />} />
           <Route path="id" element={<AffidavitOfIdentity />} />
           <Route path="letters" element={<CoverLetters />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Wrapper>
     </HashRouter>

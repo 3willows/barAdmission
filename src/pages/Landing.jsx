@@ -1,6 +1,6 @@
 import React from "react";
 
-export function Landing({ setPage }) {
+export default function Landing({ setPage }) {
   return (
     <div className="m-4">
       <article className="m-5 text-center">

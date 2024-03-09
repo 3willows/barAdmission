@@ -1,16 +1,19 @@
-import { useRouteError } from "react-router-dom";
+// import { useRouteError } from "react-router-dom";
 
 export default function ErrorPage() {
-  const error = useRouteError();
-  console.error(error);
+  // Hash Router is not a data router
+
+  // const error = useRouteError();
+  // console.error(error);
 
   return (
-    <div id="error-page">
-      <h1>Oops!</h1>
-      <p>Sorry, an unexpected error has occurred.</p>
-      <p>
-        <i>{error.statusText || error.message}</i>
-      </p>
+    <div className="m-4">
+      <article className="m-5 text-center">
+        <p className="m-5 text-center">Oops</p>
+        <p className="m-5 text-center">
+          Sorry, an unexpected error has occurred.
+        </p>
+      </article>
     </div>
   );
 }
