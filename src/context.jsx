@@ -53,41 +53,12 @@ const reducer = (state, action) => {
 
 // Context provider
 const ContextProvider = ({ children }) => {
-  const [
-    {
-      applicant,
-      applicantAddress,
-      applicantAffidavit,
-      solicitors,
-      solicitorsAddress,
-      solicitorsPhone,
-      solicitorsFax,
-      idAffidavit,
-      idDeponent,
-      idDeponentAddress,
-      year,
-      mover,
-      certdate,
-    },
-    dispatch,
-  ] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <Context.Provider
       value={{
-        applicant,
-        applicantAddress,
-        applicantAffidavit,
-        solicitors,
-        solicitorsAddress,
-        solicitorsPhone,
-        solicitorsFax,
-        idAffidavit,
-        idDeponent,
-        idDeponentAddress,
-        year,
-        mover,
-        certdate,
+        ...state,
         dispatch,
       }}
     >
