@@ -1,4 +1,6 @@
-Open issues:
+Enter information once, generate all required forms.
 
-- Consider strategy for testing the "print" function on the website for users on different computers.
-- Automatic enforcement of the jurat rule.
+Screenshot
+
+<img src="https://github.com/3willows/barAdmission/assets/111284156/c9eec796-26e1-41d8-a1ef-939f58959fc9" width="400" />
+
