@@ -1,6 +1,6 @@
 Enter information once, generate all required forms.
 
-Caveat Emptor: you should know better than blindly follow an online template if you're a barrister!
+Caveat Emptor: you should know better than blindly follow a template if you're a barrister!
 
 Screenshot
 
