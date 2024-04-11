@@ -46,7 +46,7 @@ export default function ExhibitCoverPage({
           </p>
           <p>IN THE {documentTitle}</p>
           <p>
-            AFFIRMED ON THE {Tab} DAY OF {year}
+            AFFIRMED ON THE <Tab /> DAY OF {year}
           </p>
         </div>
       </div>
