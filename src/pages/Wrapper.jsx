@@ -18,16 +18,21 @@ export default function Wrapper({ children }) {
           className="m-1 flex grid-cols-3 flex-col justify-between 
         gap-x-1 bg-slate-600 py-1 text-white md:grid"
         >
-          <span className="border-2 border-white py-1 text-left md:border-0">
-            <Link to="/">About</Link>
-          </span>
-          <button className=" border-2  border-white py-1 text-left md:border-0">
-            <Link to="info"> Enter Information</Link>
-          </button>
+          <Link
+            to="/"
+            className="border-2 border-white py-1 text-left md:border-0"
+          >
+            About
+          </Link>
+          <Link
+            to="info"
+            className="border-2  border-white py-1 text-left md:border-0"
+          >
+            Enter Information
+          </Link>
 
-          <span className="border-2 border-white py-1 text-left md:border-0">
             <select
-              className="border-0"
+              className="border-2 border-white py-1 text-left md:border-0 "
               onChange={(e) => {
                 console.log(e.target.value);
                 navigate(`${e.target.value}`);
@@ -45,7 +50,6 @@ export default function Wrapper({ children }) {
               </option>
               <option value="letters">Cover letters</option>
             </select>
-          </span>
         </nav>
       </header>
       <main>{children}</main>
