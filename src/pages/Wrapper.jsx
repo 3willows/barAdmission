@@ -18,15 +18,15 @@ export default function Wrapper({ children }) {
           className="m-1 flex grid-cols-3 flex-col justify-between 
         gap-x-1 bg-slate-600 py-1 text-white md:grid"
         >
-          <span className="border-2 border-white text-left md:border-0">
+          <span className="border-2 border-white py-1 text-left md:border-0">
             <Link to="/">About</Link>
           </span>
-          <button className="border-2 border-white text-left md:border-0">
+          <button className=" border-2  border-white py-1 text-left md:border-0">
             <Link to="info"> Enter Information</Link>
           </button>
 
           <select
-            className="border-2 border-white bg-slate-600 text-left md:border-0"
+            className="border-2 border-white bg-slate-600 py-1 text-left md:border-0"
             onChange={(e) => {
               console.log(e.target.value);
               navigate(`${e.target.value}`);
@@ -49,7 +49,13 @@ export default function Wrapper({ children }) {
       <main>{children}</main>
       <footer className="mt-auto bg-slate-600 p-2 text-white ">
         <h1 className="sticky m-1 mt-2 text-left text-xl font-bold">
-          <a href="https://github.com/3willows/barAdmission" target="_blank" rel="noreferrer">Source code</a>
+          <a
+            href="https://github.com/3willows/barAdmission"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Source code
+          </a>
         </h1>
       </footer>
     </div>
