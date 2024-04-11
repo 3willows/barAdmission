@@ -5,17 +5,15 @@ import React from "react";
 export default class Landing extends React.Component{
   render() {
     return (
-      <div className="m-4">
-        <article className="m-5 text-center">
-          <p className="m-5 text-center">
+        <article className="m-3 text-left">
+          <p >
             Generate court papers for Hong Kong barrister admission in one
             click.
           </p>
-          <p className="m-5 text-center">
+          <p>
             For pupils seeking admission in {new Date().getFullYear()}.
           </p>
         </article>
-      </div>
     );
   }
 }
