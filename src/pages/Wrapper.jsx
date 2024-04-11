@@ -25,25 +25,27 @@ export default function Wrapper({ children }) {
             <Link to="info"> Enter Information</Link>
           </button>
 
-          <select
-            className="border-2 border-white bg-slate-600 py-1 text-left md:border-0"
-            onChange={(e) => {
-              console.log(e.target.value);
-              navigate(`${e.target.value}`);
-            }}
-          >
-            <option value="info">Select Document</option>
-            <option value="notice">Notice of Motion</option>
-            <option value="applicant">
-              {applicantAffidavit ? "Affidavit" : "Affirmation"} of{" "}
-              {applicant === "APPLICANT" ? "the Applicant" : applicant}
-            </option>
-            <option value="id">
-              {idAffidavit ? "Affidavit" : "Affirmation"} of{" "}
-              {idDeponent === "ID DEPONENT" ? "Identity" : idDeponent}
-            </option>
-            <option value="letters">Cover letters</option>
-          </select>
+          <span className="border-2 border-white py-1 text-left md:border-0">
+            <select
+              className="border-0"
+              onChange={(e) => {
+                console.log(e.target.value);
+                navigate(`${e.target.value}`);
+              }}
+            >
+              <option value="info">Select Document</option>
+              <option value="notice">Notice of Motion</option>
+              <option value="applicant">
+                {applicantAffidavit ? "Affidavit" : "Affirmation"} of{" "}
+                {applicant === "APPLICANT" ? "the Applicant" : applicant}
+              </option>
+              <option value="id">
+                {idAffidavit ? "Affidavit" : "Affirmation"} of{" "}
+                {idDeponent === "ID DEPONENT" ? "Identity" : idDeponent}
+              </option>
+              <option value="letters">Cover letters</option>
+            </select>
+          </span>
         </nav>
       </header>
       <main>{children}</main>
