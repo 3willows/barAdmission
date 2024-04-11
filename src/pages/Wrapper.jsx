@@ -49,7 +49,7 @@ export default function Wrapper({ children }) {
       <main>{children}</main>
       <footer className="mt-auto bg-slate-600 p-2 text-white ">
         <h1 className="sticky m-1 mt-2 text-left text-xl font-bold">
-          Source code
+          <a href="https://github.com/3willows/barAdmission" target="_blank" rel="noreferrer">Source code</a>
         </h1>
       </footer>
     </div>
