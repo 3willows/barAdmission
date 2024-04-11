@@ -45,12 +45,10 @@ export default function EnterInfo() {
 
   return (
     <div className="leading-relaxed">
-      <h2 className="text-center">
-        <span className="font-bold sm:hidden">
-          Changes are immediately reflected in the "Select Document" Tab.{" "}
-        </span>
+      <h2 className="m-4 text-left sm:hidden">
+          Changes are immediately reflected in the "Select Document" Tab.
       </h2>
-      <div className="text-center font-bold sm:hidden">
+      <div className="m-4 text-left sm:hidden">
         Printing only available on laptop/desktop.
       </div>
       <article className="m-4 grid-cols-2 gap-4 md:grid ">
