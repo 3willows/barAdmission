@@ -44,9 +44,9 @@ export default function EnterInfo() {
   }
 
   return (
-    <div className="leading-relaxed">
+    <div className=" flex	h-full flex-col justify-between leading-relaxed">
       <h2 className="m-4 text-left sm:hidden">
-          Changes are immediately reflected in the "Select Document" Tab.
+        Changes are immediately reflected in the "Select Document" Tab.
       </h2>
       <div className="m-4 text-left sm:hidden">
         Printing only available on laptop/desktop.
@@ -104,6 +104,7 @@ export default function EnterInfo() {
           </div>
         </div>
       </article>
+
       <div className="m-4">
         <p className="hidden sm:block">
           {" "}
@@ -113,17 +114,16 @@ export default function EnterInfo() {
           Printing only available on laptop/desktop. (Not available on Firefox
           Android)
         </p>
-
         <div className="hidden">
           <ComponentToPrint ref={componentRef} />
         </div>
         <button
           onClick={handlePrint}
-          className="hidden w-40 my-1 bg-slate-600 p-1 text-white sm:inline-block "
+          className="my-1 hidden w-40 bg-slate-600 p-1 text-white sm:inline-block "
         >
           Print
         </button>
-      </div>{" "}
+      </div>
     </div>
   );
 }
