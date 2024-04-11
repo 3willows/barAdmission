@@ -5,7 +5,8 @@ import React from "react";
 export default class Landing extends React.Component{
   render() {
     return (
-        <article className="m-3 text-left">
+        <div className="m-3 text-left">
+          {/* border-red-400 border-4 */}
           <p>
             Generate court papers for Hong Kong barrister admission in one
             click.
@@ -13,7 +14,7 @@ export default class Landing extends React.Component{
           <p className="my-2">
             For pupils seeking admission in {new Date().getFullYear()}.
           </p>
-        </article>
+        </div>
     );
   }
 }
