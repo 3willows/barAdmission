@@ -2,6 +2,7 @@ import Tab from "../helper/Tab.jsx"
 import { useAppContext } from "../context.jsx";
 
 export default function Backsheet({ documentTitle }) {
+  
   const {
     applicant,
     year,
@@ -10,6 +11,7 @@ export default function Backsheet({ documentTitle }) {
     solicitorsPhone,
     solicitorsFax,
   } = useAppContext();
+
   return (
     <div>
       <div className="m-5 flex flex-col justify-between">
@@ -35,8 +37,8 @@ export default function Backsheet({ documentTitle }) {
                 a Barrister of the High Court of the Hong Kong Special
                 Administrative Region
               </p>
-              <p className="">and</p>
-              <p className="">
+              <p >and</p>
+              <p >
                 IN THE MATTER of Section 27 of the Legal Practitioners
                 Ordinance, Cap. 159
               </p>
@@ -44,11 +46,10 @@ export default function Backsheet({ documentTitle }) {
           </div>
           <p className="mb-5 mt-5 text-center">{documentTitle}</p>
         </div>
-        <div className="">
+        <div >
           <div className="grid grid-cols-3 gap-4">
             <span></span>
-            <div className="">
-              {" "}
+            <div>
               <p>Dated:</p>
               <p> Filed on: </p>
             </div>
