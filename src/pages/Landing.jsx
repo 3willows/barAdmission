@@ -6,11 +6,11 @@ export default class Landing extends React.Component{
   render() {
     return (
         <article className="m-3 text-left">
-          <p >
+          <p>
             Generate court papers for Hong Kong barrister admission in one
             click.
           </p>
-          <p>
+          <p className="my-2">
             For pupils seeking admission in {new Date().getFullYear()}.
           </p>
         </article>
