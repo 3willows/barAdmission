@@ -55,7 +55,7 @@ export default function EnterInfo() {
       </div>
       <article className="m-4 grid-cols-2 gap-4 md:grid ">
         <div>
-          <h3 className=" my-1 uppercase">The Applicant</h3>
+          <h3 className=" my-1 font-bold">The Applicant</h3>
           <div className="grid grid-cols-2 gap-2">
             <span>Name</span>
             <DataInput prop="applicant" />
@@ -71,7 +71,7 @@ export default function EnterInfo() {
           </div>
         </div>
         <div>
-          <h3 className="my-1 uppercase">The Solicitors</h3>
+          <h3 className="my-1 font-bold">The Solicitors</h3>
           <div className="grid grid-cols-2 gap-2">
             <span> Name </span>
             <DataInput prop="solicitors" />
@@ -83,7 +83,7 @@ export default function EnterInfo() {
           </div>
         </div>
         <div className="">
-          <h3 className="my-1 uppercase">ID Deponent</h3>
+          <h3 className="my-1 font-bold">The ID Deponent</h3>
           <div className="grid grid-cols-2 gap-2">
             <span>Name of Deponent </span> <DataInput prop="idDeponent" />
             Deponent Address <DataInput prop="idDeponentAddress" />
@@ -98,7 +98,7 @@ export default function EnterInfo() {
         </div>
 
         <div>
-          <h3 className="my-1 uppercase">Other information</h3>
+          <h3 className="my-1 font-bold">Other information</h3>
           <div className="grid grid-cols-2 gap-2">
             Mover <DataInput prop="mover" />
             Date of Certificate of Qualification for Admission
@@ -107,23 +107,25 @@ export default function EnterInfo() {
         </div>
       </article>
       <div className="m-4">
-      <p className="hidden sm:block"> Changes are immediately reflected in the "Select Document" Tab.</p>
+        <p className="hidden sm:block">
+          {" "}
+          Changes are immediately reflected in the "Select Document" Tab.
+        </p>
         <p className="hidden sm:block">
           Printing only available on laptop/desktop. (Not available on Firefox
           Android)
         </p>
-      </div>
-      <div className="hidden">
-        <ComponentToPrint ref={componentRef} />
-      </div>
-      <article className="m-1 text-center">
+
+        <div className="hidden">
+          <ComponentToPrint ref={componentRef} />
+        </div>
         <button
           onClick={handlePrint}
-          className="m-2 hidden w-40 bg-slate-600 p-1 text-white sm:inline-block "
+          className="hidden w-40 my-1 bg-slate-600 p-1 text-white sm:inline-block "
         >
           Print
         </button>
-      </article>
+      </div>{" "}
     </div>
   );
 }

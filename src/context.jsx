@@ -11,8 +11,8 @@ const initialState = {
   idDeponent: "ID DEPONENT",
   idDeponentAddress: "ID DEPONENT ADDRESS",
   idAffidavit: false,
-  mover: "[Pupil Master]",
-  certdate: "[Date]",
+  mover: "PUPIL MASTER",
+  certdate: "DATE",
   year: new Date().getFullYear(),
 };
 
