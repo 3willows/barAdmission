@@ -52,7 +52,7 @@ export default function Wrapper({ children }) {
             </select>
         </nav>
       </header>
-      <main>{children}</main>
+     {children}
       <footer className="mt-auto bg-slate-600 p-2 text-white ">
         <h1 className="sticky m-1 mt-2 text-left text-xl font-bold">
           <a

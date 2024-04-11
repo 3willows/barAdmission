@@ -5,8 +5,7 @@ import React from "react";
 export default class Landing extends React.Component{
   render() {
     return (
-        <div className="m-3 text-left">
-          {/* border-red-400 border-4 */}
+        <div className="flex flex-col m-3 text-left h-full justify-center">
           <p>
             Generate court papers for Hong Kong barrister admission in one
             click.
