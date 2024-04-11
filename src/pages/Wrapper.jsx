@@ -32,7 +32,7 @@ export default function Wrapper({ children }) {
           </Link>
 
             <select
-              className="border-2 border-white py-1 text-left md:border-0 "
+              className="border-2 bg-slate-600 border-white py-1 text-left md:border-0 "
               onChange={(e) => {
                 console.log(e.target.value);
                 navigate(`${e.target.value}`);
