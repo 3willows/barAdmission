@@ -1,27 +1,23 @@
 import React, { useRef } from "react";
 import { useAppContext } from "../context.jsx";
 import { DataInput } from "../components/DataInput.jsx";
-import { useReactToPrint } from "react-to-print";
 
 import AffidavitOfApplicant from "./AffidavitOfApplicant.jsx";
 import AffidavitOfIdentity from "./AffidavitOfIdentity.jsx";
 import NoticeOfMotion from "./NoticeOfMotion.jsx";
 import CoverLetters from "./CoverLetters.jsx";
 
-const getPageMargins = () => {
-  return `@page { margin: 5% !important}`;
-};
 
 const ComponentToPrint = React.forwardRef((props, ref) => {
   return (
     <div ref={ref}>
-      <style>{getPageMargins()}</style>
+      {/* <style>{getPageMargins()}</style> */}
       <NoticeOfMotion />
-      <div className="pagebreak"></div>
+      {/* <div className="pagebreak"></div> */}
       <AffidavitOfApplicant />
-      <div className="pagebreak"></div>
+      {/* <div className="pagebreak"></div> */}
       <AffidavitOfIdentity />
-      <div className="pagebreak"></div>
+      {/* <div className="pagebreak"></div> */}
       <CoverLetters />
     </div>
   );
@@ -29,11 +25,7 @@ const ComponentToPrint = React.forwardRef((props, ref) => {
 
 export default function EnterInfo() {
   const { dispatch, idAffidavit, applicantAffidavit } = useAppContext();
-  const componentRef = useRef();
-
-  const handlePrint = useReactToPrint({
-    content: () => componentRef.current,
-  });
+  const sourceRef = useRef(null);
 
   function handleAffidavit(relevantAffidavit, e) {
     if (e.target.checked) {
@@ -44,14 +36,17 @@ export default function EnterInfo() {
   }
 
   function exportHTML() {
+    const sourceHTML = sourceRef.current.innerHTML;
+
     var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' " +
       "xmlns:w='urn:schemas-microsoft-com:office:word' " +
       "xmlns='http://www.w3.org/TR/REC-html40'>" +
       "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title></head><body>";
     var footer = "</body></html>";
-    var sourceHTML = header + "<body> hello </body>"+ footer;
 
-    var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+    const fullHTML = header + sourceHTML + footer;
+    const source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(fullHTML);
+
     var fileDownload = document.createElement("a");
     document.body.appendChild(fileDownload);
     fileDownload.href = source;
@@ -111,7 +106,6 @@ export default function EnterInfo() {
             ></input>
           </div>
         </div>
-
         <div>
           <h3 className="my-1 font-bold">Other information</h3>
           <div className="grid grid-cols-2 gap-2">
@@ -132,19 +126,13 @@ export default function EnterInfo() {
           Android)
         </p>
         <div className="hidden">
-          <ComponentToPrint ref={componentRef} />
+          <ComponentToPrint ref={sourceRef}  id="source-html"/>
         </div>
-        <button
-          onClick={handlePrint}
-          className="my-1 hidden w-40 bg-slate-600 p-1 text-white sm:inline-block "
-        >
-          Print
-        </button>
         <button
           onClick={exportHTML}
           className="my-1 hidden w-40 bg-slate-600 p-1 text-white sm:inline-block "
         >
-          export html
+          Print Word
         </button>
       </div>
     </div>
