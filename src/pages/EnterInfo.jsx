@@ -43,6 +43,23 @@ export default function EnterInfo() {
     }
   }
 
+  function exportHTML() {
+    var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' " +
+      "xmlns:w='urn:schemas-microsoft-com:office:word' " +
+      "xmlns='http://www.w3.org/TR/REC-html40'>" +
+      "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title></head><body>";
+    var footer = "</body></html>";
+    var sourceHTML = header + "<body> hello </body>"+ footer;
+
+    var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+    var fileDownload = document.createElement("a");
+    document.body.appendChild(fileDownload);
+    fileDownload.href = source;
+    fileDownload.download = 'document.doc';
+    fileDownload.click();
+    document.body.removeChild(fileDownload);
+  }
+
   return (
     <div className=" flex	h-full flex-col justify-between leading-relaxed">
       <h2 className="m-4 text-left sm:hidden">
@@ -122,6 +139,12 @@ export default function EnterInfo() {
           className="my-1 hidden w-40 bg-slate-600 p-1 text-white sm:inline-block "
         >
           Print
+        </button>
+        <button
+          onClick={exportHTML}
+          className="my-1 hidden w-40 bg-slate-600 p-1 text-white sm:inline-block "
+        >
+          export html
         </button>
       </div>
     </div>
