@@ -60,7 +60,7 @@ export default function EnterInfo() {
     const fileDownload = document.createElement('a');
     document.body.appendChild(fileDownload);
     fileDownload.href = source;
-    fileDownload.download = 'document.doc';
+    fileDownload.download = 'Barrister Admission Bundle (beta).doc';
 
     // Trigger the download
     fileDownload.click();
