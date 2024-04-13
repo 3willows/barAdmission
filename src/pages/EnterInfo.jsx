@@ -1,26 +1,8 @@
 import React, { useRef } from "react";
 import { useAppContext } from "../context.jsx";
 import { DataInput } from "../components/DataInput.jsx";
-
-import AffidavitOfApplicant from "./AffidavitOfApplicant.jsx";
-import AffidavitOfIdentity from "./AffidavitOfIdentity.jsx";
-import NoticeOfMotion from "./NoticeOfMotion.jsx";
-import CoverLetters from "./CoverLetters.jsx";
-import { TailwindStyles } from "../helper/TailwindStyles.html";
-
-const ComponentToPrint = React.forwardRef((props, ref) => {
-  return (
-    <div ref={ref}>
-      <NoticeOfMotion />
-      <br className="pagebreak"></br>
-      <AffidavitOfApplicant />
-      <br className="pagebreak"></br>
-      <AffidavitOfIdentity />
-      <br className="pagebreak"></br>
-      <CoverLetters />
-    </div>
-  );
-});
+import { ComponentToPrint } from "../helper/ComponentToPrint.jsx";
+import { exportHTML } from "../helper/ExportHTML.jsx";
 
 export default function EnterInfo() {
   const { dispatch, idAffidavit, applicantAffidavit } = useAppContext();
@@ -32,35 +14,6 @@ export default function EnterInfo() {
     } else {
       dispatch({ type: relevantAffidavit, payload: false });
     }
-  }
-
-  function exportHTML() {
-    const sourceHTML = sourceRef.current.innerHTML;
-
-    const header =
-      `<html xmlns:o='urn:schemas-microsoft-com:office:office' ` +
-      `xmlns:w='urn:schemas-microsoft-com:office:word' ` +
-      `xmlns='http://www.w3.org/TR/REC-html40'>` +
-      `<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title>` +
-      TailwindStyles +
-      `</head><body>`;
-
-    const footer = "</body></html>";
-
-    const fullHTML = header + sourceHTML + footer;
-
-    const source =
-      "data:application/vnd.ms-word;charset=utf-8," +
-      encodeURIComponent(fullHTML);
-
-    const fileDownload = document.createElement("a");
-    document.body.appendChild(fileDownload);
-    fileDownload.href = source;
-    fileDownload.download = "Barrister Admission Bundle (beta).doc";
-
-    fileDownload.click();
-
-    document.body.removeChild(fileDownload);
   }
 
   return (
@@ -137,13 +90,13 @@ export default function EnterInfo() {
         </div>
         <div className="">
           <button
-            onClick={exportHTML}
-            className="group my-1 hidden w-40 bg-slate-600 p-1 text-white sm:inline-block sm:hover:bg-slate-550"
-          >  
-               <span className="block group-hover:hidden">
-               Download as Word.doc file
+            onClick={() => exportHTML(sourceRef)}
+            className="sm:hover:bg-slate-550 group my-1 hidden w-40 bg-slate-600 p-1 text-white sm:inline-block"
+          >
+            <span className="block group-hover:hidden">
+              Download as Word.doc file
             </span>
-          <span className="hidden group-hover:block">
+            <span className="hidden group-hover:block">
               NB Save changes as separate Word.docx file!
             </span>
           </button>
