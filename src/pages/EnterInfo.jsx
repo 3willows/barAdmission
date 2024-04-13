@@ -83,12 +83,12 @@ export default function EnterInfo() {
           Changes are immediately reflected in the "Select Document" Tab.
         </p>
         <p className="hidden sm:block">
-          Printing only available on laptop/desktop.
+        Download only available on laptop/desktop.
         </p>
         <div className="hidden">
           <ComponentToPrint ref={sourceRef} id="source-html" />
         </div>
-        <div className="">
+        <div className="flex flex-row-reverse">
           <button
             onClick={() => exportHTML(sourceRef)}
             className="sm:hover:bg-slate-550 group my-1 hidden w-40 bg-slate-600 p-1 text-white sm:inline-block"
