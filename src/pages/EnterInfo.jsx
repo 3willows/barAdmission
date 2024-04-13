@@ -43,7 +43,8 @@ export default function EnterInfo() {
       `<html xmlns:o='urn:schemas-microsoft-com:office:office' ` +
       `xmlns:w='urn:schemas-microsoft-com:office:word' ` +
       `xmlns='http://www.w3.org/TR/REC-html40'>` +
-      `<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title>` + TailwindStyles +
+      `<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title>` +
+      TailwindStyles +
       `</head><body>`;
 
     // Define the footer
@@ -137,17 +138,24 @@ export default function EnterInfo() {
           Changes are immediately reflected in the "Select Document" Tab.
         </p>
         <p className="hidden sm:block">
-          Printing only available on laptop/desktop. 
+          Printing only available on laptop/desktop.
         </p>
         <div className="hidden">
           <ComponentToPrint ref={sourceRef} id="source-html" />
         </div>
-        <button
-          onClick={exportHTML}
-          className="my-1 hidden w-40 bg-slate-600 p-1 text-white sm:inline-block "
-        >
-          Print Word
-        </button>
+        <div className="">
+          <button
+            onClick={exportHTML}
+            className="group my-1 hidden w-40 bg-slate-600 p-1 text-white sm:inline-block sm:hover:bg-slate-550"
+          >  
+               <span className="block group-hover:hidden">
+               Download Word.doc
+            </span>
+          <span className="hidden group-hover:block">
+              NB Save changes as Word.docx!
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   );
