@@ -12,7 +12,7 @@ export default function NoticeOfMotion() {
     <div className="m-5 leading-relaxed">
       <div>
         <Heading type="notice" />
-        <p className="my-5 text-center">{documentTitle}</p>
+        <div className="text-center my-5">{documentTitle}</div>
         <div className="m-5">
           <p>
             TAKE NOTICE that the High Court of the Hong Kong Special

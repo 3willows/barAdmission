@@ -40,7 +40,7 @@ export default function ExhibitCoverPage({
             </p>
           </div>
         </div>
-        <div className="mb-5 mt-5 text-center">
+        <div className="text-center mb-5 mt-5 ">
           <p>
             THIS IS EXHIBIT {abbreviation}-{exhibitNumber} REFERRED TO
           </p>

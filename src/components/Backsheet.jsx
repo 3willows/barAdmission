@@ -44,7 +44,7 @@ export default function Backsheet({ documentTitle }) {
               </p>
             </div>
           </div>
-          <p className="mb-5 mt-5 text-center">{documentTitle}</p>
+          <div className="text-center mb-5 mt-5">{documentTitle}</div>
         </div>
         <div >
           <div className="grid grid-cols-3 gap-4">

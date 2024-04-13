@@ -18,7 +18,7 @@ export default function AffidavitOfApplicant() {
   return (
     <div className="m-5 leading-relaxed">
       <Heading type="affirmation" deponent={applicant} />
-      <p className="text-center">{documentTitle}</p>
+      <div className="text-center">{documentTitle}</div>
       <p className="">
         I, {applicant} of {applicantAddress}, DO{" "}
         {applicantAffidavit ? "MAKE OATH" : "SOLEMNLY AFFIRM"} and say as
