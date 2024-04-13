@@ -33,7 +33,7 @@ export default function NoticeOfMotion() {
           <p className="">Registrar</p>
         </div>
       </div>
-      <div className="pagebreak"></div>{" "}
+      <br className="pagebreak"></br>
       <div className="mx-5">
         <br></br> This Notice of Motion was issued by {solicitors},{" "}
         {solicitorsAddress}, Solicitors for the Applicant.
@@ -68,7 +68,7 @@ export default function NoticeOfMotion() {
             </div>
           </div>
         </div>
-        <div className="pagebreak"></div>
+        <br className="pagebreak"></br>
         <Backsheet documentTitle={documentTitle} />
       </div>
     </div>

@@ -57,7 +57,7 @@ export default function AffidavitOfApplicant() {
         </li>
       </ol>
       <Jurat affidavit={applicantAffidavit} />
-      <div className="pagebreak"></div>
+      <br className="pagebreak"></br>
       <ExhibitCoverPage
         documentTitle={documentTitle}
         certdate={certdate}
@@ -66,7 +66,7 @@ export default function AffidavitOfApplicant() {
         abbreviation={abbreviation}
         exhibitNumber={1}
       />{" "}
-      <div className="pagebreak"></div>
+      <br className="pagebreak"></br>
       <Backsheet documentTitle={documentTitle} />
     </div>
   );

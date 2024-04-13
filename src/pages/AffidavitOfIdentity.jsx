@@ -40,14 +40,14 @@ export default function AffidavitOfIdentity() {
         </li>
       </ol>
       <Jurat affidavit={idAffidavit} />
-      <div className="pagebreak"></div>
+      <br className="pagebreak"></br>
       <ExhibitCoverPage
         documentTitle={documentTitle}
         description={`Photograph of ${applicant}`}
         abbreviation={abbreviation}
         exhibitNumber={1}
       />{" "}
-      <div className="pagebreak"></div>
+      <br className="pagebreak"></br>
       <Backsheet documentTitle={documentTitle} />
     </div>
   );

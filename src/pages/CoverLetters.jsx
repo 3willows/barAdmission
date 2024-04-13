@@ -69,7 +69,7 @@ export default function CoverLetters() {
         <LetterBody />
       </div>
 
-      <div className="pagebreak"></div>
+      <br className="pagebreak"></br>
 
       <div className="m-5">
         <p>The Honorary Secretary</p>
@@ -80,7 +80,7 @@ export default function CoverLetters() {
         <LetterBody />
       </div>
 
-      <div className="pagebreak"></div>
+      <br className="pagebreak"></br>
 
       <div className="m-5">
         <p> The Secretary for Justice</p>
