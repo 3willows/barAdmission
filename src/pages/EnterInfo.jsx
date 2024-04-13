@@ -22,7 +22,7 @@ export default function EnterInfo() {
         Changes are immediately reflected in the "Select Document" Tab.
       </h2>
       <div className="m-4 text-left sm:hidden">
-        Printing only available on laptop/desktop.
+      Download only available on laptop/desktop.
       </div>
       <article className="m-4 grid-cols-2 gap-4 md:grid ">
         <div>
