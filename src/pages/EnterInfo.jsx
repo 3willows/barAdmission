@@ -35,10 +35,8 @@ export default function EnterInfo() {
   }
 
   function exportHTML() {
-    // Retrieve the inner HTML from the element using the reference
     const sourceHTML = sourceRef.current.innerHTML;
 
-    // Define the header including a style tag to turn all text red
     const header =
       `<html xmlns:o='urn:schemas-microsoft-com:office:office' ` +
       `xmlns:w='urn:schemas-microsoft-com:office:word' ` +
@@ -47,27 +45,21 @@ export default function EnterInfo() {
       TailwindStyles +
       `</head><body>`;
 
-    // Define the footer
     const footer = "</body></html>";
 
-    // Combine header, sourceHTML, and footer
     const fullHTML = header + sourceHTML + footer;
 
-    // Create a data URL for the Word document
     const source =
       "data:application/vnd.ms-word;charset=utf-8," +
       encodeURIComponent(fullHTML);
 
-    // Create an anchor element
     const fileDownload = document.createElement("a");
     document.body.appendChild(fileDownload);
     fileDownload.href = source;
     fileDownload.download = "Barrister Admission Bundle (beta).doc";
 
-    // Trigger the download
     fileDownload.click();
 
-    // Clean up
     document.body.removeChild(fileDownload);
   }
 
@@ -149,10 +141,10 @@ export default function EnterInfo() {
             className="group my-1 hidden w-40 bg-slate-600 p-1 text-white sm:inline-block sm:hover:bg-slate-550"
           >  
                <span className="block group-hover:hidden">
-               Download Word.doc
+               Download as Word.doc file
             </span>
           <span className="hidden group-hover:block">
-              NB Save changes as Word.docx!
+              NB Save changes as separate Word.docx file!
             </span>
           </button>
         </div>
