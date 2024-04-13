@@ -9,7 +9,7 @@ export default function Wrapper({ children }) {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-100vh text-normal my-2 flex h-screen flex-col bg-slate-100 font-serif leading-relaxed text-black md:text-lg">
+    <div className=" min-h-100vh text-normal my-2 flex  h-screen  flex-col  bg-slate-100 font-serif leading-relaxed text-black md:text-lg">
       <header className="bg-slate-600 p-2 text-white">
         <h1 className="sticky m-1 mt-2 text-left text-xl font-bold">
           Barrister Admission Bundle (Beta)
@@ -31,30 +31,30 @@ export default function Wrapper({ children }) {
             Enter Information
           </Link>
 
-            <select
-              className="border-2 bg-slate-600 border-white py-1 text-left rounded-none md:border-0 "
-              onChange={(e) => {
-                console.log(e.target.value);
-                navigate(`${e.target.value}`);
-              }}
-            >
-              <option value="info">Select Document</option>
-              <option value="notice">Notice of Motion</option>
-              <option value="applicant">
-                {applicantAffidavit ? "Affidavit" : "Affirmation"} of{" "}
-                {applicant === "APPLICANT" ? "the Applicant" : applicant}
-              </option>
-              <option value="id">
-                {idAffidavit ? "Affidavit" : "Affirmation"} of{" "}
-                {idDeponent === "ID DEPONENT" ? "Identity" : idDeponent}
-              </option>
-              <option value="letters">Cover letters</option>
-            </select>
+          <select
+            className="rounded-none border-2 border-white bg-slate-600 py-1 text-left md:border-0 "
+            onChange={(e) => {
+              console.log(e.target.value);
+              navigate(`${e.target.value}`);
+            }}
+          >
+            <option value="info">Select Document</option>
+            <option value="notice">Notice of Motion</option>
+            <option value="applicant">
+              {applicantAffidavit ? "Affidavit" : "Affirmation"} of{" "}
+              {applicant === "APPLICANT" ? "the Applicant" : applicant}
+            </option>
+            <option value="id">
+              {idAffidavit ? "Affidavit" : "Affirmation"} of{" "}
+              {idDeponent === "ID DEPONENT" ? "Identity" : idDeponent}
+            </option>
+            <option value="letters">Cover letters</option>
+          </select>
         </nav>
       </header>
-     {children}
-      <footer className="mt-auto bg-slate-600 p-2 text-white ">
-        <h1 className="sticky m-1 mt-2 text-left text-xl font-bold">
+      <div className="flex-grow">{children}</div>
+      <footer className=" bg-slate-600 p-2 text-white ">
+        <h1 className="m-1 mt-2 text-left text-xl font-bold">
           <a
             href="https://github.com/3willows/barAdmission"
             target="_blank"
