@@ -1,5 +1,5 @@
 import { useAppContext } from "../context.jsx";
-import Tab from "../helper/Tab.jsx"
+import Tab from "../helper/Tab.jsx";
 
 export default function Heading({ type, deponent }) {
   const { applicant, year } = useAppContext();
@@ -10,22 +10,22 @@ export default function Heading({ type, deponent }) {
           <>
             <div className="justify-between md:flex">
               <span>For filing</span>
-              <div>
+              <div className="text-right">
                 <p>
                   Applicant:
                   {deponent}:1st:
                   <Tab />
                 </p>
-                <p>
+                <div className="text-right">
                   HCMP <Tab />/{year}
-                </p>
+                </div>
               </div>
             </div>
           </>
         )}
         {type === "notice" && (
           <>
-            <div className="flex justify-between">
+            <div className="justify-between md:flex">
               <div className="text-left">
                 <div className="border border-black"> Claim nature:</div>
                 <div className="border border-black">
@@ -37,7 +37,7 @@ export default function Heading({ type, deponent }) {
                   B. Profession (Barristers)
                 </div>
               </div>
-              <div>
+              <div className="text-right">
                 HCMP <Tab />/{year}
               </div>
             </div>
