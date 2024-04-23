@@ -93,12 +93,7 @@ export default function EnterInfo() {
             onClick={() => exportHTML(sourceRef)}
             className="sm:hover:bg-slate-550 group my-1 hidden w-40 bg-slate-600 p-1 text-white sm:inline-block"
           >
-            <span className="block group-hover:hidden">
               Download as Word.doc file
-            </span>
-            <span className="hidden group-hover:block">
-              NB Save changes as separate Word.docx file!
-            </span>
           </button>
         </div>
       </div>
