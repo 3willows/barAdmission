@@ -9,5 +9,5 @@ Screenshot
 Note to self:
 
 - Add testing framework
-- Set up a [pandoc](https://github.com/jgm/pandoc/blob/master/doc/pandoc-server.md) server to smooth out the user experience with downloading a Word file.
+- Use a transpiler (of sorts) e.g. (Lightning CSS)[https://lightningcss.dev/transpilation.html] to convert flex and grid into older CSS, so that the case title styling works on the Word version too.
 - Plan how to expand this to cover the Quick Affirmation functionalities via draw.io or Figma.
