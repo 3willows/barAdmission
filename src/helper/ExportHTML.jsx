@@ -1,30 +1,46 @@
 import { TailwindStyles } from "../helper/TailwindStyles.html";
+import { saveAs } from "file-saver";
 
 export function exportHTML(sourceRef) {
   const sourceHTML = sourceRef.current.innerHTML;
 
-  const header =
-    `<html xmlns:o='urn:schemas-microsoft-com:office:office' ` +
-    `xmlns:w='urn:schemas-microsoft-com:office:word' ` +
-    `xmlns='http://www.w3.org/TR/REC-html40'>` +
-    `<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title>` +
-    TailwindStyles +
-    `</head><body>`;
+  var statiC = {
+    mhtml: {
+      top:
+      /* eslint-disable */
+        "Mime-Version: 1.0\nContent-Base: " +
+        location.href +
+        '\nContent-Type: Multipart/related; boundary="NEXT.ITEM-BOUNDARY";type="text/html"\n\n--NEXT.ITEM-BOUNDARY\nContent-Type: text/html; charset="utf-8"\nContent-Location: ' +
+        location.href +
+        "\n\n<!DOCTYPE html>\n<html>\n_html_</html>",
+      head: '<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8">\n<style>\n_styles_\n</style>\n</head>\n',
+      body: "<body>_body_</body>",
+    },
+  };
+  var options = {
+    maxWidth: 624,
+  };
+  // Clone selected element before manipulating it
+  var markup = sourceHTML
 
-  const footer = "</body></html>";
 
-  const fullHTML = header + sourceHTML + footer;
+  // Prepare bottom of mhtml file with image data
+  var mhtmlBottom = "\n";
+  mhtmlBottom += "--NEXT.ITEM-BOUNDARY--";
 
-  const source =
-    "data:application/vnd.ms-word;charset=utf-8," +
-    encodeURIComponent(fullHTML);
+  var styles = TailwindStyles;
 
-  const fileDownload = document.createElement("a");
-  document.body.appendChild(fileDownload);
-  fileDownload.href = source;
-  fileDownload.download = "Barrister Admission Bundle (beta).doc";
+  // Aggregate parts of the file together
+  var fileContent =
+    statiC.mhtml.top.replace(
+      "_html_",
+      statiC.mhtml.head.replace("_styles_", styles) +
+        statiC.mhtml.body.replace("_body_", markup),
+    ) + mhtmlBottom;
 
-  fileDownload.click();
-
-  document.body.removeChild(fileDownload);
+  // Create a Blob with the file contents
+  var blob = new Blob([fileContent], {
+    type: "application/msword;charset=utf-8",
+  });
+  saveAs(blob, "abc.doc");
 }
