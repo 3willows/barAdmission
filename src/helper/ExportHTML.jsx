@@ -42,5 +42,5 @@ export function exportHTML(sourceRef) {
   var blob = new Blob([fileContent], {
     type: "application/msword;charset=utf-8",
   });
-  saveAs(blob, "abc.doc");
+  saveAs(blob, `Barrister Admission Bundle(beta).doc`);
 }
