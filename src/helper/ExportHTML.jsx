@@ -1,6 +1,6 @@
 import { saveAs } from "file-saver";
 
-export function exportHTML(sourceRef, styles) {
+export function exportHTML(sourceRef, styles, filename=`Barrister Admission Bundle(beta).doc`) {
   const sourceHTML = sourceRef.current.innerHTML;
 
   const statiC = {
@@ -32,5 +32,5 @@ export function exportHTML(sourceRef, styles) {
   const blob = new Blob([fileContent], {
     type: "application/msword;charset=utf-8",
   });
-  saveAs(blob, `Barrister Admission Bundle(beta).doc`);
+  saveAs(blob, filename);
 }

@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { useAppContext } from "../context.jsx";
 import { DataInput } from "../components/DataInput.jsx";
 import { ComponentToPrint } from "../helper/ComponentToPrint.jsx";
-import { exportHTML } from "../helper/ExportHTML.jsx";
+import { htmlCssExportWord } from "html-css-export-word";
 import { TailwindStyles } from "../helper/TailwindStyles.html";
 
 export default function EnterInfo() {
@@ -91,7 +91,7 @@ export default function EnterInfo() {
         </div>
         <div className="flex flex-row-reverse">
           <button
-            onClick={() => exportHTML(sourceRef, TailwindStyles)}
+            onClick={() => htmlCssExportWord(sourceRef, TailwindStyles, `Barrister Admission Bundle(beta).doc`)}
           >
               Download as Word.doc file
           </button>
