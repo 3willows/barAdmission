@@ -3,7 +3,7 @@ import { saveAs } from "file-saver";
 export function exportHTML(sourceRef, styles) {
   const sourceHTML = sourceRef.current.innerHTML;
 
-  var statiC = {
+  const statiC = {
     mhtml: {
       top:
       /* eslint-disable */
@@ -17,25 +17,19 @@ export function exportHTML(sourceRef, styles) {
     },
   };
 
-  // Clone selected element before manipulating it
-  var markup = sourceHTML
-
   // Prepare bottom of mhtml file with image data
-  var mhtmlBottom = "\n";
-  mhtmlBottom += "--NEXT.ITEM-BOUNDARY--";
-
-  // var styles = TailwindStyles;
+  const mhtmlBottom = "\n" + "--NEXT.ITEM-BOUNDARY--";
 
   // Aggregate parts of the file together
-  var fileContent =
+  const fileContent =
     statiC.mhtml.top.replace(
       "_html_",
       statiC.mhtml.head.replace("_styles_", styles) +
-        statiC.mhtml.body.replace("_body_", markup),
+        statiC.mhtml.body.replace("_body_", sourceHTML),
     ) + mhtmlBottom;
 
   // Create a Blob with the file contents
-  var blob = new Blob([fileContent], {
+  const blob = new Blob([fileContent], {
     type: "application/msword;charset=utf-8",
   });
   saveAs(blob, `Barrister Admission Bundle(beta).doc`);
