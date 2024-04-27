@@ -3,6 +3,7 @@ import { useAppContext } from "../context.jsx";
 import { DataInput } from "../components/DataInput.jsx";
 import { ComponentToPrint } from "../helper/ComponentToPrint.jsx";
 import { exportHTML } from "../helper/ExportHTML.jsx";
+import { TailwindStyles } from "../helper/TailwindStyles.html";
 
 export default function EnterInfo() {
   const { dispatch, idAffidavit, applicantAffidavit } = useAppContext();
@@ -90,8 +91,7 @@ export default function EnterInfo() {
         </div>
         <div className="flex flex-row-reverse">
           <button
-            onClick={() => exportHTML(sourceRef)}
-            className="sm:hover:bg-slate-550 group my-1 hidden w-40 bg-slate-600 p-1 text-white sm:inline-block"
+            onClick={() => exportHTML(sourceRef, TailwindStyles)}
           >
               Download as Word.doc file
           </button>

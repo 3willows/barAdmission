@@ -1,7 +1,6 @@
-import { TailwindStyles } from "../helper/TailwindStyles.html";
 import { saveAs } from "file-saver";
 
-export function exportHTML(sourceRef) {
+export function exportHTML(sourceRef, styles) {
   const sourceHTML = sourceRef.current.innerHTML;
 
   var statiC = {
@@ -17,18 +16,15 @@ export function exportHTML(sourceRef) {
       body: "<body>_body_</body>",
     },
   };
-  var options = {
-    maxWidth: 624,
-  };
+
   // Clone selected element before manipulating it
   var markup = sourceHTML
-
 
   // Prepare bottom of mhtml file with image data
   var mhtmlBottom = "\n";
   mhtmlBottom += "--NEXT.ITEM-BOUNDARY--";
 
-  var styles = TailwindStyles;
+  // var styles = TailwindStyles;
 
   // Aggregate parts of the file together
   var fileContent =
