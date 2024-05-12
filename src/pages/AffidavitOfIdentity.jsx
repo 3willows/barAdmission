@@ -2,7 +2,7 @@ import { useAppContext } from "../context.jsx";
 import Tab from "../helper/Tab.jsx"
 import Heading from "../components/CommonHeading.jsx";
 import Backsheet from "../components/Backsheet.jsx";
-import abbrev from "../helper/abbrev.js";
+import abbrev from "../helper/abbrev.jsx";
 import Jurat from "../components/Jurat.jsx";
 import ExhibitCoverPage from "../components/ExhibitCoverPage.jsx";
 

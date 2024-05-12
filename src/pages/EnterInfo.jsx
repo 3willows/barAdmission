@@ -1,9 +1,9 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useAppContext } from "../context.jsx";
 import { DataInput } from "../components/DataInput.jsx";
 import { ComponentToPrint } from "../helper/ComponentToPrint.jsx";
 import { htmlCssExportWord } from "html-css-export-word";
-import { TailwindStyles } from "../helper/TailwindStyles.html";
+import { TailwindStyles } from "../helper/TailwindStyles";
 
 export default function EnterInfo() {
   const { dispatch, idAffidavit, applicantAffidavit } = useAppContext();
@@ -91,7 +91,7 @@ export default function EnterInfo() {
         </div>
         <div className="flex flex-row-reverse">
           <button
-            onClick={() => htmlCssExportWord(sourceRef, TailwindStyles, `Barrister Admission Bundle(beta).doc`)}
+            onClick={() => htmlCssExportWord(sourceRef.current.innerHTML, TailwindStyles, `Barrister Admission Bundle(beta).doc`)}
           >
               Download as Word.doc file
           </button>

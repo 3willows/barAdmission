@@ -1,15 +1,14 @@
-import React from "react";
-import { Routes, Route, HashRouter } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom"
 
-import Wrapper from "./pages/Wrapper";
+import Wrapper from "./pages/Wrapper.jsx"
 
-import  Landing  from "./pages/Landing";
-import EnterInfo from "./pages/EnterInfo.jsx";
-import AffidavitOfApplicant from "./pages/AffidavitOfApplicant";
-import AffidavitOfIdentity from "./pages/AffidavitOfIdentity";
-import NoticeOfMotion from "./pages/NoticeOfMotion";
-import CoverLetters from "./pages/CoverLetters";
-import ErrorPage from "./pages/ErrorPage";
+import Landing from "./pages/Landing.jsx"
+import EnterInfo from "./pages/EnterInfo.jsx"
+import AffidavitOfApplicant from "./pages/AffidavitOfApplicant.jsx"
+import AffidavitOfIdentity from "./pages/AffidavitOfIdentity.jsx"
+import NoticeOfMotion from "./pages/NoticeOfMotion.jsx"
+import CoverLetters from "./pages/CoverLetters.jsx"
+import ErrorPage from "./pages/ErrorPage.jsx"
 
 export default function App() {
   return (
@@ -26,5 +25,5 @@ export default function App() {
         </Routes>
       </Wrapper>
     </HashRouter>
-  );
+  )
 }
